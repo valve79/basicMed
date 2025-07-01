@@ -1,0 +1,32 @@
+/* fix page width */
+.container {
+    width: 100%;
+    box-sizing: border-box;
+}
+body {
+     min-width: inherit;
+}
+
+html {
+  font-size: 16px;
+}
+/* overwrite content: '' in main.crush.css */
+.alertBoxes:before, .alertBoxes:after {
+  content: initial;
+}
+/* white background for part of body while course view */
+body {
+    background: white repeat 0 0 !important;
+}
+
+.tcMed .contentPanel1, .tcMed .contentPanel2 {
+    box-sizing: border-box;
+}
+/* fix top margin overwritten by course.crush.css */
+.contentPanel1 .left p {
+    margin-top: 0;
+}
+
+.datepicker-days tr td, .datepicker-days tr th {
+    padding: 0 !important;
+}

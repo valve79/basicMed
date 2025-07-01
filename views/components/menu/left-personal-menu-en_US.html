@@ -1,0 +1,1 @@
+<nav class="navbar"><ul class="nav nav-pills nav-stacked"><li role="presentation" ng-class="{'active': menuVM.currentMenuItemKey == item.key}" ng-if="item.allowed" ng-repeat="item in menuVM.parentMap.get(menuVM.currentMenuItemKey).items"><a ng-href="{{item.url}}">{{item.name}}</a></li></ul></nav>

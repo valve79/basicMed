@@ -1,0 +1,1022 @@
+<div ng-controller="auth.LogOnController as vm">
+  <div ng-include="::vm.url.template('common/_page-styles.html')"></div>
+  <style type="text/css">
+    
+    .tcMedTopBar {
+      display: none !important;
+    }
+    .tcMed h1 {
+      line-height: normal;
+    }
+    .renewalLogicBox {
+      margin: 2rem 0;
+      padding: 1rem;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    .renewalLogicBox label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    .renewalLogicBox input[type="date"] {
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      width: 100%;
+      max-width: 300px;
+    }
+    .renewalLogicBox button {
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #007cba;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .renewalLogicBox .recommendation {
+      margin-top: 1rem;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+    .tcMed .tcMedHero .tcMedHeroContent img {
+    max-width: 90%;
+    height: auto;
+    -ms-interpolation-mode: bicubic;
+}
+
+      .logo-container {
+          display: flex;
+          align-items: center; /* Vertically centers the content */
+      }
+
+      .logo-text {
+          margin-left: 20px; /* Adds space between the logo and text */
+      }
+
+      .logo-text h1 {
+          font-size: 3.7em; /* Adjust the size of the "BasicMed" text */
+          margin: 0; /* Removes default margin */
+          font-weight: bold;
+      }
+
+      .logo-text p {
+          font-size: 1.2em; /* Adjust the size of the smaller text */
+          margin: 0; /* Removes default margin */
+          color: #666; /* Adjust color for the smaller text */
+      }
+
+      .tcMed * {
+          font-family: 'Lato', sans-serif;
+      }
+
+
+
+
+/* Modal styles */
+/* Modal background */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 9999; /* Ensure it is on top of all other content */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+  overflow: hidden; /* Prevent background from scrolling */
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  margin-top: 5%;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Adjust as needed */
+  position: relative;
+  z-index: 10000; /* Ensure content is above the background */
+  max-height: 90vh; /* Prevent modal from growing too tall */
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */
+  box-sizing: border-box; /* Ensures padding is included in height calculation */
+}
+
+/* Close button */
+.close-btn {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-family: Arial, sans-serif;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* Center step titles */
+.step h4 {
+  text-align: center;
+  font-size: 1.8em;
+  margin: 0;
+  padding: 0.375rem 0;
+}
+
+/* Additional styling for step icons and content */
+.step {
+  margin-bottom: 20px;
+}
+
+.step .icon {
+  margin-right: 10px;
+  text-align: center;
+}
+
+.step img {
+  height: 80%;
+  margin: 0 auto;
+  display: block;
+}
+
+.step p {
+  font-size: 1em;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+/* Optional: You can add an overlay effect to dim the background content */
+.modal:before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5); /* Dimmed background */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Make sure the overlay is behind the modal content */
+}
+
+.tcMed .tcMedHero .tcMedHeroContent a,
+.tcMed .tcMedHero .tcMedHeroContent button {
+  width: 80%;
+  margin: 0 auto;
+  padding: 7px;
+  display: block;
+  text-align: center;
+  word-wrap: break-word; /* Ensures text wraps within the button */
+  word-break: break-word; /* Breaks long words if necessary */
+}
+
+.tcMed a.btn {
+  color: #fff;
+}
+
+.tcMed .button {
+  display: inline-block;
+  background-color: #0079a5;
+  font-size: 13px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.846;
+  text-align: center;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.17);
+  padding: 7px 25px;
+  border-radius: 10px;
+  border: 2px solid #00a3e0;
+  text-decoration: none;
+  max-width: 100%; /* Ensures the button doesn't exceed its container width */
+  box-sizing: border-box; /* Includes padding in the element's total width calculation */
+}
+
+/* mobile */
+/* Default layout for desktop or larger screens (steps side by side) */
+.tcMed .tcMedProcess .tcMonthRenewal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* Optional, adds space between the steps */
+}
+
+.tcMed .tcMedProcess .tcMonthRenewal .step {
+  width: 22%; /* Adjust this to make sure all steps fit in one row */
+  margin-bottom: 20px;
+}
+
+/* Mobile view adjustments (stack the steps vertically) */
+@media (max-width: 767px) {
+  .tcMed .tcMedProcess .tcMonthRenewal {
+    flex-direction: column; /* Stack the steps vertically */
+    align-items: center; /* Center the content */
+  }
+
+  .tcMed .tcMedProcess .tcMonthRenewal .step {
+    width: 100%; /* Make each step take up the full width */
+    margin-bottom: 20px;
+    text-align: center; /* Ensure text is centered */
+  }
+
+  .tcMed .tcMedProcess .tcMonthRenewal .step img {
+    max-width: 100%; /* Ensure images do not overflow */
+    height: auto;
+  }
+}
+
+
+.tcMedProcessPage {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 900px;
+}
+
+.tcMedProcessPage .step {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.tcMedProcessPage .icon {
+  flex: 0 0 auto;
+}
+
+.tcMedProcessPage .icon img {
+  height: 6em;
+  width: auto;
+  display: block;
+}
+
+.tcMedProcessPage .text {
+  flex: 1;
+}
+
+.alert-message {
+  background: #fff3cd;
+  border: 1px solid #ffeeba;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-align: center; /* Center the text */
+}
+
+  </style>
+  <div class="tcMedHero">
+    <div class="l-wrapper tcMedHeroContent">
+      <div class="logo-container">
+        <img class="logo" style="max-width: 170px;" alt="Medical Self-Assessment | A pilot's guide to flying healthy." src="https://demo-basicmedicalcourse.aopa.org/client/themes/aopa/css/tcMed/aopaLogo.png">
+        <div class="logo-text">
+            <h1>BasicMed</h1>
+            <p>Medical Self-Assessment Course</p>
+        </div>
+      </div>
+
+
+      <div class="tcMedHeroSubContainer" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+        <!-- LEFT COLUMN -->
+        <div class="left" style="flex: 1; min-width: 250px;">
+          <p><strong class="orange" style="font-size: 1.2em">New to BasicMed</strong>Get started by creating a <strong>new</strong> account.</p>
+          <p class="smallLink">
+            <button class="why" href="javascript:void(0);" onclick="$('#ntfy1').showPopup()">Why do I need to create an account?</button>
+          </p>
+          <a id="signUpButton" class="button btn btn-register-link" style="width:100%;" href="#/users/signup">Create an Account</a>
+          <p style="font-size:1em;font-weight: bold; margin-top: 20px;">The FAA requires this course to have a seperate login from other sites to better secure your medical information.</p>
+        </div>
+      
+        <!-- MIDDLE COLUMN (RENEWAL FORM) -->
+        <div class="middle" style="flex: 1; min-width: 250px; border-right: 1px solid #c5c0be; padding-left: 40px; padding-right: 40px;">
+          <p style="font-size: 1.8em; margin: 12px 0 10px;"><strong>Renewing BasicMed</strong></p>
+              <!-- Remove ng-submit and ng-controller from the form -->
+              <form id="renewalForm" class="form-signin">
+                <div class="inputControls">
+                  <p style="margin: 10px 0; font-size: 12px; justify-content: normal;"><strong>1. When was your last BasicMed Exam?</strong></p>
+                  <input
+                    id="bmeddatepicker"
+                    class="form-control"
+                    type="date"
+                    placeholder="mm/dd/yyyy"
+                    style="margin: 10px 0; width: 100%; border: 1px solid black;"
+                    required
+                  >
+
+                  <p style="margin: 10px 0; font-size: 12px; justify-content: normal;"><strong>2. When did you last pass the BasicMed Course?</strong></p>
+                  <input
+                    id="coursedatepicker"
+                    class="form-control"
+                    type="date"
+                    placeholder="mm/dd/yyyy"
+                    style="margin: 10px 0; width: 100%; border: 1px solid black;"
+                    required
+                  >
+                </div>
+
+                <div class="buttonControls">
+                  <button
+                    id="submitdate"
+                    type="submit"
+                    class="button dark btn vhs-green vhs-white-text"
+                    style="margin-top: 10px; padding: 6px 20px;"
+                  >
+                    Submit
+                  </button>
+                </div>
+
+                <div class="smallLink errorMessage" style="margin-top: 10px;"></div>
+              </form>
+              <div class="smallLink">
+                <a href="https://amsrvs.registry.faa.gov/airmeninquiry/" target="_blank">Not sure of the dates? Confirm in FAA Airman Registry</a>
+              </div>
+
+        </div>
+        
+        
+        
+        
+      
+        <!-- RIGHT COLUMN -->
+        <div class="right" style="flex: 1; min-width: 250px;">
+          <p style="font-size: 1.8em; margin: 12px 0 10px;"><strong>Return Users Login</strong></p>
+          <p style="font-size: 12px; margin: 0"><strong>This log-in is different from an AOPA website account</strong></p>
+          <form class="form-signin ng-scope ng-dirty ng-valid-parse ng-valid ng-valid-required" ng-if="!vm.restore" ng-submit="vm.logOn()">
+            <div class="inputControls">
+              <label for="usernameField" class="sr-only">Login</label>
+              <input style="margin: 10px 0;" type="text" id="usernameField" class="form-control" placeholder="Email address" ng-model="vm.username" ng-disabled="vm.inProgress" required autofocus>
+      
+              <label for="passwordField" class="sr-only">Password</label>
+              <input style="margin: 10px 0" type="password" id="passwordField" class="form-control" placeholder="Password" ng-model="vm.password" ng-disabled="vm.inProgress" required>
+      
+              <select class="form-control ng-hide" style="margin: 10px 0" required ng-disabled="vm.inProgress" ng-show="vm.internalProviders && vm.internalProviders.length > 1" ng-options="p.key as p.name for p in vm.internalProviders" ng-model="vm.providerKey">
+                <option value="0" selected="selected" label="Internal users">Internal users</option>
+              </select>
+            </div>
+            <div class="buttonControls">
+              <label for="signUpButton" class="sr-only">Create an Account</label>
+              <label for="loginButton" class="sr-only">LOG IN</label>
+              <button id="loginButton" class="button dark btn vhs-green vhs-white-text" type="submit" ng-disabled="vm.inProgress">LOG IN</button>
+            </div>
+            <div class="smallLink">
+              <a href="" ng-click="vm.restorePassword()">Forgot Your Password?</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal Structure -->
+<div id="stepsModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div id="renewalSteps"></div>
+  </div>
+</div>
+
+
+  <h1 class="focNotification">
+    This <strong>FREE</strong> course is open to everyone, AOPA membership is
+    not required to take the course.
+  </h1>
+  <div class="l-wrapper tcMedProcess" style="display: none;">
+    <div class="tcMonthRenewal">
+      <h4
+        ng-if="vm.renewalType === 'NEW'"
+        style="font-size: 1.8em; margin: 0; padding: 0.375rem 0"
+      >
+        New to BasicMed
+      </h4>
+      <a
+        ng-if="vm.renewalType !== 'NEW'"
+        class="button"
+        ng-click="vm.changeRenewalType('NEW')"
+        style="margin: 0"
+        >NEW TO BASICMED STEPS</a
+      >
+      <h4
+        ng-if="vm.renewalType === 'MONTH24'"
+        style="font-size: 1.8em; margin: 0; padding: 0.375rem 0"
+      >
+        24-Month Renewal Steps
+      </h4>
+      <a
+        ng-if="vm.renewalType !== 'MONTH24'"
+        class="button"
+        ng-click="vm.changeRenewalType('MONTH24')"
+        style="margin: 0"
+        >24-MONTH RENEWAL STEPS</a
+      >
+      <h4
+        ng-if="vm.renewalType === 'MONTH48'"
+        style="font-size: 1.8em; margin: 0; padding: 0.375rem 0"
+      >
+        48-Month Renewal Steps
+      </h4>
+      <a
+        ng-if="vm.renewalType !== 'MONTH48'"
+        class="button"
+        ng-click="vm.changeRenewalType('MONTH48')"
+        style="margin: 0"
+        >48-MONTH RENEWAL STEPS</a
+      >
+    </div>
+    <div ng-if="vm.renewalType === 'NEW'" id="defaultSteps" class="steps">
+      <div class="step step1">
+        <div class="icon">
+          <img
+            style="height: 80%"
+            alt="clipboard icon"
+            src="themes/aopa/images/AOPA_brand_icons_Download_forms_PMS303.png"
+          />
+        </div>
+        <h4>Step 1: Get the BasicMed FAA CMEC Form</h4>
+        <p>
+          Review if you&#39;re eligible for BasicMed and download the
+          <a
+            href="https://www.faa.gov/documentLibrary/media/Form/FAA_Form_8700-2_OMB_EXP_06-2026.pdf"
+            target="_blank"
+            >BasicMed FAA Comprehensive Medical Examination Checklist (CMEC)</a
+          >. Complete the self-assessment portion of the form.
+        </p>
+      </div>
+      <div class="step step2">
+        <div class="icon">
+          <img
+            style="height: 80%"
+            alt="doctor icon"
+            src="themes/aopa/images/AOPA_brand_icons_Doctor_PMS303.png"
+          />
+        </div>
+        <h4>Step 2: See Your Doctor</h4>
+        <p>
+          Take your Comprehensive Medical Examination Checklist (from Step 1)
+          and get a BasicMed specific exam by a state-licensed doctor. Have your
+          doctor fill out the rest of the exam checklist. You will need this to
+          complete step 3 and will need it again for your 24-month renewal.
+        </p>
+      </div>
+      <div class="step step3">
+        <div class="icon">
+          <img
+            style="height: 80%"
+            alt="certificate icon"
+            src="themes/aopa/images/AOPA_brand_icons_Online course_PMS303.png"
+          />
+        </div>
+        <h4>Step 3: Take Online Course</h4>
+        <p>
+          Once you have completed your FAA CMEC from a state licensed physician,
+          take this online course and pass the quiz. You<strong>
+            must complete the post-course form</strong
+          >
+          to submit your exam information (from Step 2) to the FAA to earn your
+          BasicMed completion certificate.
+        </p>
+      </div>
+      <div class="step step4">
+        <div class="icon">
+          <img
+            style="height: 80%"
+            alt="aeroplane icon"
+            src="themes/aopa/images/AOPA_brand_icons_File docs_PMS303.png"
+          />
+        </div>
+        <h4>Step 4: File Documents in Your Logbook</h4>
+        <p>
+          Download your course completion certificate and keep it with your
+          completed CMEC in your logbook or electronically. You need to have it
+          available upon request from FAA. Make sure you have a valid flight
+          review, and you are ready to fly!
+        </p>
+      </div>
+    </div>
+    <div ng-if="vm.renewalType === 'MONTH24'" id="month24Steps" class="steps">
+      <div class="step step1">
+        <div class="icon">
+          <img
+            style="height: 80%"
+            alt="doctor icon"
+            src="themes/aopa/images/AOPA_brand_icons_Renewal_docs_in_hand_PMS303.png"
+          />
+        </div>
+        <h4>Step 1: Get Out Your Most Recent CMEC</h4>
+        <p>
+          With this renewal, you will need your most recent FAA Comprehensive
+          Medical Examination Checklist (CMEC). This will most likely be from
+          your previous BasicMed exam 24 months ago. You will submit the exam
+          information electronically again via post-course form to the FAA for
+          your renewal.
+        </p>
+      </div>
+      <div class="step step2">
+        <div class="icon">
+          <img
+            style="height: 80%"
+            alt="certificate icon"
+            src="themes/aopa/images/AOPA_brand_icons_Online course_PMS303.png"
+          />
+        </div>
+        <h4>Step 2: Take Online Course</h4>
+        <p>
+          Complete the BasicMed online course and pass the quiz. Then, fill out
+          the online form at the end of the course with your FAA pilot
+          information and the physician’s information from the completed CMEC.
+          Finally, <strong>submit the online form</strong> and print your course
+          completion certificate.
+        </p>
+      </div>
+      <div class="step step3">
+        <div class="icon">
+          <img
+            style="height: 80%"
+            alt="aeroplane icon"
+            src="themes/aopa/images/AOPA_brand_icons_File docs_PMS303.png"
+          />
+        </div>
+        <h4>Step 3: File Documents in Your Logbook</h4>
+        <p>
+          Download your course completion certificate and keep it with your
+          completed CMEC in your logbook or electronically. You need to have it
+          available upon request from FAA. Make sure you have a valid flight
+          review, and you are ready to fly!
+        </p>
+      </div>
+    </div>
+    <div ng-if="vm.renewalType === 'MONTH48'" id="month48Steps" class="steps">
+      <div class="step step1">
+        <div class="icon">
+          <img
+            style="height: 80%"
+            alt="clipboard icon"
+            src="themes/aopa/images/AOPA_brand_icons_Download_forms_PMS303.png"
+          />
+        </div>
+        <h4>Step 1: Get the BasicMed FAA CMEC Form</h4>
+        <p>
+          This is just like apply to BasicMed for the first time. It is
+          resetting your renewal clock. Review if you're still eligible for
+          BasicMed and download a new
+          <a
+            href="https://www.faa.gov/documentLibrary/media/Form/FAA_Form_8700-2_OMB_EXP_06-2026.pdf"
+            target="_blank"
+            >BasicMed FAA Comprehensive Medical Examination Checklist (CMEC)</a
+          >. Complete the self-assessment portion of the form. Remember you must
+          have a current and valid state issued driver’s license.
+        </p>
+      </div>
+      <div class="step step2">
+        <div class="icon">
+          <img
+            style="height: 80%"
+            alt="doctor icon"
+            src="themes/aopa/images/AOPA_brand_icons_Doctor_PMS303.png"
+          />
+        </div>
+        <h4>Step 2: See Your Doctor</h4>
+        <p>
+          Take your Comprehensive Medical Examination Checklist (from Step 1)
+          and get a BasicMed specific exam by a state-licensed physician. Have
+          your doctor fill out the rest of the exam checklist. You will need
+          this to complete step 3 and will need it again for your next 24-month
+          renewal.
+        </p>
+      </div>
+      <div class="step step3">
+        <div class="icon">
+          <img
+            style="height: 80%"
+            alt="certificate icon"
+            src="themes/aopa/images/AOPA_brand_icons_Online course_PMS303.png"
+          />
+        </div>
+        <h4>Step 3: Take Online Course</h4>
+        <p>
+          Once you have completed your FAA CMEC from a state licensed physician,
+          take this online course and pass the quiz. You<strong>
+            must complete the post-course form</strong
+          >
+          to submit your exam information (from Step 2) to the FAA to earn your
+          BasicMed completion certificate.
+        </p>
+      </div>
+      <div class="step step4">
+        <div class="icon">
+          <img
+            style="height: 80%"
+            alt="aeroplane icon"
+            src="themes/aopa/images/AOPA_brand_icons_File docs_PMS303.png"
+          />
+        </div>
+        <h4>Step 4: File Documents in Your Logbook</h4>
+        <p>
+          Download your course completion certificate and keep it with your
+          completed CMEC in your logbook or electronically. You need to have it
+          available upon request from FAA. Make sure you have a valid flight
+          review, and you are ready to fly!
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="l-wrapper tcMedContent">
+    <div class="contentPanel1">
+      <h1>What you need to know before flying under BasicMed</h1>
+
+      <p>
+        Third class medical reform has been an AOPA priority for years, and now it's a reality. By completing five simple steps, eligible pilots can now fly under FAA's BasicMed rules.
+      </p>
+      
+      <p>
+        If you held a regular or special-issuance medical anytime on or after July 15, 2006, you are likely eligible to fly under BasicMed. AOPA has developed three tools to help you determine if you're eligible.
+      </p>
+      
+      <ul>
+        <li><a href="https://www.aopa.org/advocacy/pilots/medical/basicmed/basicmed-eligibility-and-renewal-tool" target="_blank">AOPA BasicMed Eligibility Tool</a> (Questionnaire with customized BasicMed steps checklist based on answers)</li>
+        <li><a href="https://basicmedicalcourse.aopa.org/pub/bundles/course_61001/downloads/AOPABasicMed_Pilot_and_Physicians_Guide.pdf" target="_blank">AOPA BasicMed Pilot and Physician Guide</a> (PDF 651 KB)</li>
+        <li><a href="https://basicmedicalcourse.aopa.org/pub/bundles/course_61001/downloads/AOPABasicMed_FAQs_BasicMedQuestions.pdf" target="_blank">BasicMed Course FAQs</a> (PDF 284 KB)</li>
+      </ul>
+      
+      <div class="tcMedProcessPage">
+        <div class="step">
+          <div class="icon">
+            <img alt="clipboard icon" src="themes/aopa/images/AOPA_brand_icons_Download_forms_PMS303.png">
+          </div>
+          <div class="text">
+            <p><strong>Step 1:</strong> Download and fill out the pilot self-assessment portion of the FAA Medical Exam Checklist (CMEC) form, <strong>before</strong> your doctor visit. We also recommend providing your doctor with the <a href="https://basicmedicalcourse.aopa.org/pub/bundles/course_61001/downloads/AOPABasicMed_Pilot_and_Physicians_Guide.pdf" target="_blank">AOPA BasicMed Pilot and Physician Guide</a> (PDF 651 KB) before the exam, if possible.</p>
+          </div>
+        </div>
+      
+        <div class="step">
+          <div class="icon">
+            <img alt="doctor icon" src="themes/aopa/images/AOPA_brand_icons_Doctor_PMS303.png">
+          </div>
+          <div class="text">
+            <p><strong>Step 2:</strong> With your CMEC in hand, visit your doctor for an exam specific to your BasicMed requirement. (Past annual physical or other medical visits can't be used for BasicMed eligibility.) Have your doctor fill out the remaining portion of the <a href="https://www.faa.gov/documentLibrary/media/Form/FAA_Form_8700-2_OMB_EXP_06-2026.pdf" target="_blank">FAA Medical Exam Checklist (CMEC)</a>. You'll need a BasicMed-specific exam at least once every 48-calendar months to the last day of your last exam.</p>
+          </div>
+        </div>
+      
+        <div class="step">
+          <div class="icon">
+            <img alt="certificate icon" src="themes/aopa/images/AOPA_brand_icons_Online course_PMS303.png">
+          </div>
+          <div class="text">
+            <p><strong>Step 3:</strong> After your doctor visit, and once you have your completed checklist in hand, take this online course. Use this page to create an online account and log-in. (Keep in mind that your account log-in is separate from your AOPA website account.)</p>
+          </div>
+        </div>
+      
+        <div class="step">
+          <div class="icon">
+            <img alt="aeroplane icon" src="themes/aopa/images/AOPA_brand_icons_File docs_PMS303.png">
+          </div>
+          <div class="text">
+            <p><strong>Step 4:</strong> After successfully completing the course and passing the quiz, you must submit your exam information from your completed CMEC (from Step 2) in the post-course form for final submission to the FAA to earn your BasicMed completion certificate. The information you provide will be part of your FAA Airman Record. Do not enter non-final or false information!</p>
+            <p>Finally, you'll be able to print out your BasicMed certificate of completion. Add this certificate to your logbook with your completed FAA Medical Exam Checklist (CMEC). There is nothing for you to mail to the FAA.</p>
+          </div>
+        </div>
+      
+        <div class="step">
+          <div class="icon">
+            <img alt="reminder icon" src="themes/aopa/images/AOPA%20brand%20icons_Reminders-PMS303.png">
+          </div>
+          <div class="text">
+            <p><strong>Step 5:</strong> Mark your calendar. You'll need mark two reminders: the first in 24 months—the date you need to retake the BasicMed Course, and the second in 48 months, to the last day of that month—when you’ll need a new BasicMed exam with a new CMEC. You’ll be required to retake the course, pass the quiz and reenter your most recent CMEC exam details in the post-course FAA submission form in order to meet this bi-annual requirement and earn the new updated certificate.</p>
+          </div>
+        </div>
+      </div>
+      
+      <p><strong>That's it! Make sure you have a current driver's license, valid flight review, and you are ready <em>to fly</em>.</strong></p>
+      
+      
+      <hr />
+      <h3>Have questions?</h3>
+      <p>
+        Call AOPA&#39;s Pilot Information Center at
+        <a href="tel:1-888-462-3976">(888) 462-3976</a>, Monday through Friday,
+        8:30 a.m. to 6:00 p.m., Eastern time or email
+        <a
+          href="mailto:pilotassist@aopa.org?subject=BasicMed Medical Specialists Question"
+          >pilotassist@aopa.org</a
+        >.
+      </p>
+      <p>
+        Need more information about BasicMed and what it means for you?<br />Visit
+        AOPA&#39;s free
+        <a href="https://www.aopa.org/BasicMed" target="_blank">BasicMed</a>
+        resources.
+      </p>
+    </div>
+    <div class="contentPanel2">
+      <h3>BasicMed Requirements FAQs</h3>
+      <a
+        class="button"
+        href="https://basicmedicalcourse.aopa.org/pub/bundles/course_61001/downloads/AOPABasicMed_FAQs_BasicMedQuestions.pdf"
+        target="_blank"
+        >Review AOPA BasicMed Course FAQs</a
+      >
+      <hr />
+      <h1 class="dark">FAQs</h1>
+      <ul class="faqs">
+        <li>What are the critical BasicMed timelines to remember? </li>
+      </ul>
+      <p class="faqs">
+        <b>Every</b> 48-months to the last day of the month, an exam with your doctor and a completed Comprehensive Medical Examination Checklist (CMEC)
+      </p>
+      <p class="faqs">
+        <b>Every</b> 24-months to the last day of the month, completion of the online course, which including passing the quiz and uploading the CMEC information via post-course form to the FAA to earn the certificate of completion.
+      </p>
+
+
+      <ul class="faqs">
+        <li>Why do I need an account, can I just take the course?</li>
+      </ul>
+      <p class="faqs">
+        Creating an account is required in order to track your course progress.
+        This allows you to exit and re-enter the course at a later time and pick
+        up where you left off.
+      </p>
+      <ul class="faqs">
+        <li>
+          What do I do with the BasicMed course completion certificate I
+          received?
+        </li>
+      </ul>
+      <p class="faqs">
+        You&#39;ll need to print it out and keep it in your logbook. When you
+        fly, you&#39;ll need to carry a valid state-issued driver&#39;s license
+        (and comply with all medical requirements or restrictions on that
+        license) and your pilot certificate. You&#39;ll need to have (but not
+        necessarily carry) a logbook containing the completed BasicMed medical
+        examination checklist, as well the certificate showing your most recent
+        completion of the online course. Be sure to store your completion
+        certificate and medical checklist safely, whether electronic or on
+        paper.
+      </p>
+      <a href="#{{::vm.infoRouter.faqUrl()}}" class="button dark"
+        >View More Course FAQs</a
+      >
+    </div>
+  </div>
+</div>
+<div id="ntfy1" class="overlay">
+  <div class="popup">
+    <a class="close" href="javascript:void(0)" onclick='$("#ntfy1").hidePopup()'
+      >&times;</a
+    >
+    <div class="content">
+      <p>
+        An account will keep your course progress and allow you to log in later
+        or from another device to complete or review the materials.
+      </p>
+    </div>
+  </div>
+</div>
+<script>
+  document.getElementById('renewalForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Parse the input dates as local dates
+    var medicalDate = new Date(document.getElementById("bmeddatepicker").value + "T00:00:00");
+    var courseDate = new Date(document.getElementById("coursedatepicker").value + "T00:00:00");
+
+    console.log('Entered Medical Date:', medicalDate);
+    console.log('Entered Course Date:', courseDate);
+
+    var renewalType = 'NEW';
+
+    if (isValidDate(medicalDate) && isValidDate(courseDate)) {
+        var medicalDeadline = getEndOfMonthPlusMonths(medicalDate, 48); // Adjusting for 48-month deadline
+        var courseDeadline = getEndOfMonthPlusMonths(courseDate, 24); // Adjusting for 24-month deadline
+
+        console.log('Calculated Medical Deadline:', medicalDeadline);
+        console.log('Calculated Course Deadline:', courseDeadline);
+
+        var now = new Date();
+        console.log('Current Date (Now):', now);
+
+        var medicalExpired = now > medicalDeadline;
+        var courseExpired = now > courseDeadline;
+
+        console.log('Medical expired?', medicalExpired);
+        console.log('Course expired?', courseExpired);
+
+        if (medicalExpired) {
+            renewalType = 'MONTH48';
+        } else if (courseExpired) {
+            renewalType = 'MONTH24';
+        } else {
+            renewalType = 'NEW';
+        }
+
+        showModal(renewalType, medicalDate, courseDate, medicalExpired, courseExpired);
+    }
+  });
+  
+  function isValidDate(d) {
+    return d instanceof Date && !isNaN(d);
+  }
+  
+  // Adjusted logic to ensure the date is set to the end of the month correctly
+  function getEndOfMonthPlusMonths(date, monthsToAdd) {
+    let exp = new Date(date);
+    exp.setMonth(exp.getMonth() + monthsToAdd);  // Add the months to the current month
+    
+    // Set the date to the last day of the new month
+    exp.setMonth(exp.getMonth() + 1, 0);  // Set the date to the last day of the new month
+    
+    // Set the time to the last moment of the day (23:59:59.999)
+    exp.setHours(23, 59, 59, 999);
+    
+    return exp;
+  }
+  
+  function monthsBetween(start, end) {
+    let years = end.getFullYear() - start.getFullYear();
+    let months = end.getMonth() - start.getMonth();
+    if (end.getDate() < start.getDate()) months--;
+    return years * 12 + months;
+  }
+  
+  function formatDate(date) {
+    if (!date) return '';
+    var month = (date.getMonth() + 1).toString().padStart(2, '0');
+    var day = date.getDate().toString().padStart(2, '0');
+    var year = date.getFullYear();
+    return `${month}/${day}/${year}`;
+  }
+  
+  function formatRange(startDate, endDate) {
+    return `: ${startDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} - ${endDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`;
+  }
+  
+  function getMonthDurationText(fromDate, toDate, isExpired) {
+    let years = toDate.getFullYear() - fromDate.getFullYear();
+    let months = toDate.getMonth() - fromDate.getMonth();
+    if (toDate.getDate() < fromDate.getDate()) months--;
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+    let totalMonths = years * 12 + months;
+    let color = isExpired ? 'red' : 'green';
+    return `<strong style="color:${color};">${totalMonths} months</strong>`;
+  }
+  
+  function getRenewalTitle(renewalType) {
+    if (renewalType === 'NEW') return 'New to BasicMed';
+    if (renewalType === 'MONTH24') return '24-Month Renewal Steps';
+    if (renewalType === 'MONTH48') return '48-Month Renewal Steps';
+  }
+  
+  function showModal(renewalType, medicalDate, courseDate, medicalExpired, courseExpired) {
+    var modal = document.getElementById("stepsModal");
+    var stepsContainer = document.getElementById("renewalSteps");
+    stepsContainer.innerHTML = '';
+  
+    var now = new Date();
+    var medicalDateStr = formatDate(medicalDate);
+    var courseDateStr = formatDate(courseDate);
+  
+    var medicalDuration = getMonthDurationText(medicalDate, now, medicalExpired);
+    var courseDuration = getMonthDurationText(courseDate, now, courseExpired);
+  
+    var alertMessage = (medicalExpired || courseExpired)
+      ? `<div class="alert-message">
+          <strong style="color: red;">IMPORTANT:</strong> It looks like you may have exceeded the required renewal timeline per the FAA BasicMed regulation.<br><br>
+          There is no penalty if you are not flying, this lapse is not reported to the FAA, and you can easily regain your BasicMed privileges. Just follow the easy steps to complete your renewal process.
+        </div>` : '';
+  
+    var dateInfo = `
+      <h4 style="text-align: center; margin-bottom: 10px; font-size:2em;">${getRenewalTitle(renewalType)}</h4>
+      <p style="text-align: center; font-size: 1em;">
+        <strong>Your last BasicMed Exam was on:</strong> ${medicalDateStr}<br>
+        ${medicalDuration} ${formatRange(medicalDate, now)}<br><br>
+        <strong>Your last BasicMed Course completion was on:</strong> ${courseDateStr}<br>
+        ${courseDuration} ${formatRange(courseDate, now)}
+      </p>
+      <hr/>
+      ${alertMessage}
+    `;
+  
+    let steps = '';
+  
+    if (renewalType === 'NEW') {
+      steps = `
+      <div class="l-wrapper tcMedProcess">
+        <div class="tcMonthRenewal">
+          <div class="step step1">
+            <div class="icon">
+              <img style="height: 80%" alt="clipboard icon" src="themes/aopa/images/AOPA_brand_icons_Download_forms_PMS303.png">
+            </div>
+            <h4>Step 1: Get the BasicMed FAA CMEC Form</h4>
+            <p>Review if you're eligible for BasicMed and download the 
+              <a href="https://www.faa.gov/documentLibrary/media/Form/FAA_Form_8700-2_OMB_EXP_06-2026.pdf" target="_blank">BasicMed FAA Comprehensive Medical Examination Checklist (CMEC)</a>.
+              Complete the self-assessment portion of the form.</p>
+          </div>
+          <div class="step step2">
+            <div class="icon">
+              <img style="height: 80%" alt="doctor icon" src="themes/aopa/images/AOPA_brand_icons_Doctor_PMS303.png">
+            </div>
+            <h4>Step 2: See Your Doctor</h4>
+            <p>Take your Comprehensive Medical Examination Checklist (from Step 1) and get a BasicMed specific exam by a state-licensed doctor. Have your doctor fill out the rest of the exam checklist. You will need this to complete step 3 and will need it again for your 24-month renewal.</p>
+          </div>
+          <div class="step step3">
+            <div class="icon">
+              <img style="height: 80%" alt="certificate icon" src="themes/aopa/images/AOPA_brand_icons_Online course_PMS303.png">
+            </div>
+            <h4>Step 3: Take Online Course</h4>
+            <p>Once you have completed your FAA CMEC from a state licensed physician, take this online course and pass the quiz. You <strong>must complete the post-course form</strong> to submit your exam information (from Step 2) to the FAA to earn your BasicMed completion certificate.</p>
+          </div>
+          <div class="step step4">
+            <div class="icon">
+              <img style="height: 80%" alt="aeroplane icon" src="themes/aopa/images/AOPA_brand_icons_File docs_PMS303.png">
+            </div>
+            <h4>Step 4: File Documents in Your Logbook</h4>
+            <p>Download your course completion certificate and keep it with your completed CMEC in your logbook or electronically. You need to have it available upon request from the FAA. Make sure you have a valid flight review, and you are ready to fly!</p>
+          </div>
+        </div>
+      </div>`;
+    } else if (renewalType === 'MONTH24') {
+      steps = `
+      <div class="l-wrapper tcMedProcess">
+        <div class="tcMonthRenewal">
+          <div class="step step1">
+            <div class="icon">
+              <img style="height: 80%" alt="doctor icon" src="themes/aopa/images/AOPA_brand_icons_Renewal_docs_in_hand_PMS303.png">
+            </div>
+            <h4>Step 1: Get Out Your Most Recent CMEC</h4>
+            <p>With this renewal, you will need your most recent FAA Comprehensive Medical Examination Checklist (CMEC). This will most likely be from your previous BasicMed exam 24 months ago. You will submit the exam information electronically again via post-course form to the FAA for your renewal.</p>
+          </div>
+          <div class="step step2">
+            <div class="icon">
+              <img style="height: 80%" alt="certificate icon" src="themes/aopa/images/AOPA_brand_icons_Online course_PMS303.png">
+            </div>
+            <h4>Step 2: Take Online Course</h4>
+            <p>Complete the BasicMed online course and pass the quiz. Then, fill out the online form at the end of the course with your FAA pilot information and the physician’s information from the completed CMEC. Finally, <strong>submit the online form</strong> and print your course completion certificate.</p>
+          </div>
+          <div class="step step3">
+            <div class="icon">
+              <img style="height: 80%" alt="aeroplane icon" src="themes/aopa/images/AOPA_brand_icons_File docs_PMS303.png">
+            </div>
+            <h4>Step 3: File Documents in Your Logbook</h4>
+            <p>Download your course completion certificate and keep it with your completed CMEC in your logbook or electronically. You need to have it available upon request from FAA. Make sure you have a valid flight review, and you're ready to fly!</p>
+          </div>
+        </div>
+      </div>`;
+    } else if (renewalType === 'MONTH48') {
+      steps = `
+      <div class="l-wrapper tcMedProcess">
+        <div class="tcMonthRenewal">
+          <div class="step step1">
+            <div class="icon">
+              <img style="height: 80%" alt="clipboard icon" src="themes/aopa/images/AOPA_brand_icons_Download_forms_PMS303.png">
+            </div>
+            <h4>Step 1: Get the BasicMed FAA CMEC Form</h4>
+            <p>This is just like applying to BasicMed for the first time. Reset your renewal clock by getting a new <a href="https://www.faa.gov/documentLibrary/media/Form/FAA_Form_8700-2_OMB_EXP_06-2026.pdf" target="_blank">Comprehensive Medical Examination Checklist</a> and completing the self-assessment portion.</p>
+          </div>
+          <div class="step step2">
+            <div class="icon">
+              <img style="height: 80%" alt="doctor icon" src="themes/aopa/images/AOPA_brand_icons_Doctor_PMS303.png">
+            </div>
+            <h4>Step 2: See Your Doctor</h4>
+            <p>Take your Comprehensive Medical Examination Checklist (from Step 1) and get a BasicMed specific exam by a state-licensed physician. Have your doctor fill out the rest of the exam checklist.</p>
+          </div>
+          <div class="step step3">
+            <div class="icon">
+              <img style="height: 80%" alt="certificate icon" src="themes/aopa/images/AOPA_brand_icons_Online course_PMS303.png">
+            </div>
+            <h4>Step 3: Take Online Course</h4>
+            <p>Once you have completed your FAA CMEC from a state-licensed physician, take this online course and pass the quiz. Submit your exam information via post-course online form to the FAA to earn your BasicMed completion certificate.</p>
+          </div>
+          <div class="step step4">
+            <div class="icon">
+              <img style="height: 80%" alt="aeroplane icon" src="themes/aopa/images/AOPA_brand_icons_File docs_PMS303.png">
+            </div>
+            <h4>Step 4: File Documents in Your Logbook</h4>
+            <p>Download your course completion certificate and keep it with your completed CMEC in your logbook or electronically. Make sure you have a valid flight review, and you're ready to fly!</p>
+          </div>
+        </div>
+      </div>`;
+    }
+  
+    stepsContainer.innerHTML = dateInfo + steps;
+  
+    modal.style.display = "block";
+  
+    modal.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  
+    document.querySelector('.close-btn').addEventListener('click', function () {
+      modal.style.display = "none";
+    });
+  }
+</script>
+
+
