@@ -1,0 +1,103 @@
+
+<div ng-controller="info.FAQController as vm" class="l-wrapper tcMedContent">
+
+  <div ng-include="::vm.url.template('common/_page-styles.html')"></div>
+  <div class="l-wrapper tcMedContent">
+    <div class="contentPanel1">
+      <h1>Welcome to BasicMed</h1>
+      <h2>A new way to complete your self-assessment</h2>
+      <p>BasicMed has simplified the medical process and opened up the flight deck to many pilots who for whatever reason can no longer hold a traditional medical certificate, or don’t want to go through that process.</p>
+      <p>Hundreds of thousands of pilots can potentially fly under BasicMed...</p>
+      <p style="text-align: center;">
+        <a href="##-I-eligibilityTool" class="button btn btn-register-link" style="padding: 13px 35px !important; margin: 0 !important; font-size: 0.9em;">Eligibility Tool</a>
+      </p>
+      <p class="center">You can verify your previous FAA medical dates in the <a href="https://amsrvs.registry.faa.gov/airmeninquiry/" target="_blank" alt="Find your BasicMed completion dates on the FAA’s Airman Registry">FAA’s Airman Registry</a></p>
+
+      <!-- START Steps -->
+      <div class="steps">
+        
+        <!-- Step 1 -->
+        <div class="step">
+          <label>
+            <input type="checkbox" id="step1" name="step1" value="CMEC">
+            <h3>Step 1: Get the BasicMed FAA CMEC Form</h3>
+          </label>
+        </div>
+        <p>Review if you’re eligible for BasicMed and download the CMEC...</p>
+        <p class="center"><a href="https://www.faa.gov/documentLibrary/media/Form/FAA_Form_8700-2_OMB_EXP_06-2026.pdf" class="button btn btn-register-link" style="padding: 13px 35px !important; margin: 0 !important; font-size: 0.9em;" target="_blank">Download CMEC Form</a></p>
+        <p class="center"><a href="##-L-basicmedcoursethendoctorvisit.html">Did you complete your online course before your doctor visit?</a></p>
+
+        <!-- Step 2 -->
+        <div class="step">
+          <label>
+            <input type="checkbox" id="step2" name="step2" value="DoctorExam">
+            <h3>Step 2: See Your Doctor</h3>
+          </label>
+        </div>
+        <p>Take your CMEC and get a BasicMed physical by a state-licensed doctor...</p>
+
+        <!-- Step 3 -->
+        <div class="step">
+          <label>
+            <input type="checkbox" id="step3" name="step3" value="TakeCourse">
+            <h3>Step 3: Take Online Course</h3>
+          </label>
+        </div>
+        <p>After completing your CMEC, take this online course and pass the quiz...</p>
+        <p class="center"><a href="##-B1-Create Account" class="button btn btn-register-link" style="padding: 13px 35px !important; margin: 0 !important; font-size: 0.9em;">Take the Course</a></p>
+
+        <!-- Step 4 -->
+        <div class="step">
+          <label>
+            <input type="checkbox" id="step4" name="step4" value="SaveDocs">
+            <h3>Step 4: Save Documents in Your Logbook</h3>
+          </label>
+        </div>
+        <p>Keep your CMEC and course certificate with your logbook or saved digitally...</p>
+
+        <!-- Step 5 -->
+        <div class="step">
+          <label>
+            <input type="checkbox" id="step5" name="step5" value="MarkCalendar">
+            <h3>Step 5: Mark your Calendars</h3>
+          </label>
+        </div>
+        <p>Set reminders for 24 and 48 months from your course and CMEC completion dates...</p>
+        <p><span style="color:#0079a4">Make sure you have a current valid driver’s license, valid flight review, and you are ready to <em>fly!</em></span></p>
+      </div>
+      <!-- END Steps -->
+
+      <!-- Footer -->
+      <div class="haveQuestions" ng-include="::vm.url.template('common/_page-bottom-have-questions.html')"></div>
+    </div>
+
+    <div class="contentPanel2" ng-include="::vm.url.template('common/_page-right-panel-quick-links.html')"></div>
+  </div>
+</div>
+
+<style>
+  h3 {
+    color: #2e79a6 !important;
+    font-size: 1.4em;
+    margin: 0;
+  }
+
+  .step label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    margin: 1em 0 0.3em;
+  }
+
+  .step input[type="checkbox"] {
+    width: 1.4em;
+    height: 1.4em;
+    accent-color: #0079a4;
+    min-width: 1.4em;
+  }
+
+  .steps p {
+    margin-left: 2.2em;
+  }
+</style>

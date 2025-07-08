@@ -7,14 +7,14 @@
 .top-links {
   position: absolute;
   top: 10px;
-  right: 20px;
+  right: -100px;
   z-index: 10000;
   font-size: 0.9em;
 }
 
 .top-links span {
   display: flex;
-  gap: 10px; /* adds spacing between links */
+  gap: 5px; /* adds spacing between links */
   align-items: center;
   white-space: nowrap;
 }
@@ -379,12 +379,16 @@
 	<p>If your most recent medical certificate has been suspended at any point in time or revoked, withdrawn, suspended   if your most recent authorization for special issuance was withdrawn, or your most recent medical application was denied, revoked, withdrawn or suspended, you will need to obtain a new medical certificate before you can operate under BasicMed. <a href="##-Page G Tab 1" alt="BasicMed common disqualifications">Learn more about common disqualifications</a> and how you may be able to fly under BasicMed in the future.</p>
 	<p>Whether you're new to the program, or if you're ready to renew or requalify for your medical certificate, AOPA is here to help you. Join the 80,000 pilots who have qualified to fly safely under the program since 2017. </p>
 </div>
+
 <!--END: Lower Page featured copy -->
+<!--Page Bottom Have Questions section-->
+<div class="haveQuestions" ng-include="::vm.url.template('common/_page-bottom-have-questions.html')"></div>
     </div>
     <!-- Content Panel 2 side rail -->
       <div class="contentPanel2" ng-include="::vm.url.template('common/_page-right-panel-quick-links.html')"></div>
   </div>
 </div>
+
 <div id="ntfy1" class="overlay">
   <div class="popup">
     <a class="close" href="javascript:void(0)" onclick='$("#ntfy1").hidePopup()'

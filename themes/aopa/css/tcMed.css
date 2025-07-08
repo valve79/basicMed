@@ -1,3 +1,5 @@
+.center{
+  text-align: center; }
 .noWrap {
   white-space: nowrap;
   display: inline-block; }
@@ -205,10 +207,11 @@
     padding: 20px 0 25px 0;
     z-index: 10;
     width: 100%;
+    max-width: 950px;
     position: relative;
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.18); }
-    @media screen and (min-width: 1324px) {
+    @media screen and (min-width: 1450px) {
       .tcMed .tcMedHero .tcMedHeroContent {
         background-color: transparent;
         box-shadow: none; } }
