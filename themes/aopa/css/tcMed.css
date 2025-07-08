@@ -37,9 +37,7 @@
   .tcMed a:hover {
     text-decoration: underline; }
 .tcMed .contentPanel2 .cta {
-  text-align: center;
-  border-bottom: 1px solid #989898;
-  padding: 45px 0 25px 0; }
+  border-bottom: 1px solid #989898; }
   .tcMed .contentPanel2 .cta:last-child {
     border-bottom-widt: 0; }
   .tcMed .contentPanel2 .cta h1 {
@@ -565,11 +563,23 @@
     @media screen and (min-width: 1024px) {
 
         .tcMed .tcMedContent .contentPanel2 {
-            padding: 45px 70px;
+            padding: 45px 45px;
         }
     }
 
     
+   .quickLinks a{
+      font-weight: unset;
+    }
+    ul.custom-colored-list {
+      list-style: disc;
+      padding-left: 20px;
+      color: #00a2d1; /* sets color for bullets and text */
+    }
+
+    ul.custom-colored-list li {
+      color: #00a2d1;
+    }
 
 
     .tcMed .tcMedContent .contentPanel2 ul.faqs {
