@@ -14972,25 +14972,56 @@ require = (function e(t, r, i) {
         "./../utils/PageHeaderHelper": 231,
       },
     ],
+1101: [
+  function (e, t, r) {
+    var i = e("./../utils/MenuHelper"),
+        s = e("./../utils/PageHeaderHelper"),
+        o = e("../utils/UrlService"),
+        n = (function () {
+          function e(e, t) {
+            this.$location = e;
+            this.url = t;
 
+            i.MenuHelper.setCurrentMenuItem(i.MenuHelper.WELCOME_MENU_KEY);
+            s.PageHeader.set().header("Welcome").update();
+          }
+
+          return (
+            e.NAME = "info.WelcomeController",
+            e.$inject = ["$location", o.UrlService.NAME],
+            e
+          );
+        })();
+
+    r.WelcomeController = n;
+  },
+  {
+    "../utils/UrlService": 236,
+    "./../utils/MenuHelper": 227,
+    "./../utils/PageHeaderHelper": 231,
+  },
+],
     102: [
       function (e, t, r) {
         var i = e("./AboutProjectController"),
           s = e("./AboutCompanyController"),
           o = e("./FAQController"),
-          n = e("./ContactsController");
+          n = e("./ContactsController"),
+          w = e("./WelcomeController");
         r.InfoModule = angular
           .module("info", [])
           .controller(i.AboutProjectController.NAME, i.AboutProjectController)
           .controller(s.AboutCompanyController.NAME, s.AboutCompanyController)
           .controller(o.FAQController.NAME, o.FAQController)
-          .controller(n.ContactsController.NAME, n.ContactsController);
+          .controller(n.ContactsController.NAME, n.ContactsController)
+          .controller(w.WelcomeController.NAME, w.WelcomeController);
       },
       {
         "./AboutCompanyController": 98,
         "./AboutProjectController": 99,
         "./ContactsController": 100,
         "./FAQController": 101,
+        "./WelcomeController": 1101,
       },
     ],
     103: [
