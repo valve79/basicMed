@@ -1,0 +1,604 @@
+<div ng-controller="info.RenewalController as vm" class="l-wrapper tcMedContent">
+
+    <div ng-include="::vm.url.template('common/_page-styles.html')"></div>
+    <div class="l-wrapper tcMedContent">
+        <div class="contentPanel1">
+<!-- Start Eliginility Tool-->
+                <div id="tree-container">
+                <div id="q-container">
+                <h1>BasicMed Eligibility and Renewal Tool</h1>
+                <span>Before we start, we want to remind you of the following <strong>requirements:</strong></span>
+                <ul class="lft15">
+                    <li>You must hold <strong class="red">a current and valid U.S. driver's license and comply with all of its medical requirements or restrictions</strong></li>
+                    <li>You must undergo a comprehensive <strong class="red">medical examination</strong> and have a <strong class="red">BasicMed Comprehensive Medical Examination Checklist</strong> (CMEC) completed by a state-licensed physician (<strong>every 48 months to the end of the month</strong>) </li>
+                    <li>You must take an <strong class="red">FAA approved online BasicMed medical education course and receive a completion certificate</strong> (<strong>every 24 months to the end of the month</strong>). </li>
+                    <li>You must <strong>keep these documents with your logbook or in electronic format</strong> to be made available upon request to the FAA. </li>
+                </ul>
+                <p><em>Disclaimer: The results provided by this questionnaire are for informational purposes only. You are responsible for ensuring your compliance with the BasicMed rules.</em></p>
+                <h1>Let's begin</h1>
+                <ul id="tree">
+                    <li><span class="hide">(1)</span> Have you previously had a comprehensive medical examination and a Comprehensive Medical Examination Checklist (CMEC) completed by a state-licensed physician AND completed an FAA approved online BasicMed medical education course?</li>
+                    <li><input name="q1" type="radio" value="on" id="q2" /><label for="q2"><span class="hide">(1a)</span> <strong>Yes</strong>, I have</label></li>
+                    <li><input name="q1" type="radio" value="on" id="q12" /><label for="q12"><span class="hide">(1b)</span> <strong>No</strong>, I have <strong>NOT</strong></label></li>
+                </ul>
+                </div>
+                <a href="/app.html#/info/eligibility" class="treeControls" id="reset">Start Over &gt;</a>
+                </div>
+<!-- End Eligibility tool-->
+            <!-- Footer -->
+            <div class="haveQuestions" ng-include="::vm.url.template('common/_page-bottom-have-questions.html')"></div>
+        </div>
+
+        <div class="contentPanel2" ng-include="::vm.url.template('common/_page-right-panel-quick-links.html')"></div>
+    </div>
+</div>
+
+<style>
+    h3 {
+        color: #2e79a6 !important;
+        font-size: 1.4em;
+        margin: 0;
+    }
+
+    .step label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        margin: 1em 0 0.3em;
+    }
+
+    .step input[type="checkbox"] {
+        width: 1.4em;
+        height: 1.4em;
+        accent-color: #0079a4;
+        min-width: 1.4em;
+    }
+
+    .steps p {
+        margin-left: 2.2em;
+    }
+    .form-control {
+        width: 200px;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 8px;
+        border: 2px solid #0079a5;
+        border-radius: 4px;
+    }
+    /* CSS for the tool only */
+    .tcMed input{ height: unset !important; }
+    dl{padding:20px;}
+.hide{ display:none; }
+.answer .warn { margin-bottom: 0; }
+.answer .button { margin-left: 0;}
+#tree p { margin-bottom: 0; }
+#tree label{ font-weight: normal; }
+#tree-container { margin-top: 20px; }
+#tree ul { border-top: solid 1px #e0e2e2; }
+#tree  { border-top: solid 1px #e0e2e2;}
+#reset { margin-left: 0; float:right; text-decoration: underline; text-transform: uppercase;}
+.lft15 { margin-left: 35px !important; }
+#tree-container ul { margin-left:0; }
+#tree-container ul li { margin-bottom:0 !important; }
+label { display:contents; }
+.new48q5no, .month24q5no {display: none; margin-top: 25px; margin-bottom: -20px;}
+.wshow{ display:none; margin-top: 25px; margin-bottom: -20px;}
+.green{ color: green; }
+.purple{color: purple;}
+.warn{color: red;}
+.nbld {font-weight: normal;}
+.lf20{padding-left:30px;}
+div dd, div dt {padding-bottom:5px; display: list-item;list-style-type: disc; list-style-position: inside;}
+
+div#tree-container { margin-top: 20px;}
+ul#tree, #tree ul {list-style-type:none;}
+ul#tree {background: #fff; margin:0; padding: 0;}
+#tree li {padding-top:20px; }
+#tree li:first-child {padding-left: 15px;}
+ul#tree li:last-child {padding-bottom:20px}
+#tree input {margin-right:8px; margin-left: 20px;}
+
+/* hides lists */
+.choices-collapsed {display:none;}
+
+/* styles selected choices */
+ul#tree li.choice-selected {font-style:italic; background: #fff; padding-bottom:0px;}
+
+/* styles subquestion of selected choice */
+.choice-selected ul {
+  font-style:normal;
+  margin-top:20px;
+}
+
+.choice-selected ul li {background: #fff; margin-left:0px; margin-right:0px;}
+
+/* styles answers at termination of branch */
+#tree li.answer { background:#fff; font-weight:normal; padding-left: 0;}
+.answer { background:#fff; font-weight:normal;}
+
+li.answer > ul.choices-collapsed {
+    display: block;
+    list-style-type: disc !important;
+    background: none;
+    margin-top: auto;
+    padding-top: 0;
+}
+
+li.answer li:first-child {
+    padding-left: 0 !important;
+    font-weight: normal !important;
+}
+li.answer li {
+    padding-top: 10px !important;
+    margin-left: 0;
+}
+li.answer li:last-child {
+    padding-bottom: 10px !important;
+}
+
+/* styles back and reset buttons */
+.treeControls {margin-top: 20px;}
+
+/* used for optional seeinfo popups */
+a.seeinfo {background: url('/images/group1/shared/SupportIcons/question-mark.png') center center/15px 15px no-repeat;}
+a.seeinfo {
+    display: inline-block;
+    overflow: hidden;
+    width: 0;
+    height: 15px;
+    padding-left: 20px;
+}
+div.moreinfo {display:none;}
+a.seeinfo:hover + div.moreinfo {
+display: inline-block;
+position: absolute;
+width: 300px;
+font-size: .9em;
+font-weight: normal;
+background-color: #efefef;
+padding: 20px;
+z-index: 100;
+box-shadow: 5px 5px 8px #555;
+border-radius: 10px;
+border: 1px solid #bbb;
+}
+.show{display: block;}
+
+</style>
+
+<script>
+
+$(document).ready(function(){
+  sessionStorage.clear();
+// The variable corresponds to the question # on the diagram
+// if q5 ends with D = duplicate - I will remove on click
+      q1= '<li class=""><span class="hide">(1)</span> Have you previously had a comprehensive medical examination and a Comprehensive Medical Examination Checklist (CMEC) completed by a state-licensed physician AND completed an FAA approved online BasicMed medical education course?</li>';
+      q1 += '<li class=""><input name="q1" type="radio" value="on" id="q2"/><label for="q2"><span class="hide">(1a)</span> <b>Yes</b>, I have</label></li>';
+      q1 += '<li class=""><input name="q1" type="radio" value="on" id="q12"/><label for="q12"><span class="hide">(1b)</span> <b>No</b>, I have <b>NOT</b></label></li>';
+
+      q2 = '<ul class="choices-collapsed"><li class=""><span class="hide">(2)</span> When were your last comprehensive medical examination and Comprehensive Medical Evaluation Checklist (CMEC) completed?<p><b>Not sure?</b> <a href="https://amsrvs.registry.faa.gov/airmeninquiry/Main.aspx" target="_blank">Look yourself up in the Airmen Registry</a></p></li>';
+      q2 += '<li class=""><input name="q2" type="radio" value="on" id="q3"><label for="q3"><span class="hide">(2a)</span> Within the last 24-months</label></li>';
+      q2 += '<li class=""><input name="q2" type="radio" value="on" id="q5"><label for="q5"><span class="hide">(2b)</span> Almost 48 months</label></li>';
+      q2 += '<li class=""><input name="q2" type="radio" value="on" id="w2c"><label for="w2c"><span class="hide">(2c)</span> More than 48 months</label><div class="answer wshow"><p class="warn"><b>Warning, you are not current to fly under BasicMed</b> if your last comprehensive medical examination and CMEC are more than 48 months to the day. You will need to complete the full renewal process before returning to fly under BasicMed.</p></div></li>';
+    //  q2 += '<li class=""><input name="q2" type="radio" value="on" id="a2"><label for="a2">(2d) I\'m not sure - Look yourself up in the Airmen Registry</label>';
+      q2 += '</li>';
+      q2 += '</ul>';
+
+      q3 = '<ul class="choices-collapsed"><li class=""><span class="hide">(3)</span> <span class="green hide">(24-month renewal path)</span> Have you experienced any changes in your health or had a medical event since your last comprehensive medical examination and Comprehensive Medical Examination Checklist (CMEC) were completed by a state-licensed physician?</li>';
+      q3 += '<li class=""><input name="q3" type="radio" value="on" id="q4"><label for="q4"><span class="hide">(3a)</span><b>No</b>, I have not had a change in my overall health since my last comprehensive medical examination and CMEC were completed</label></li>';
+      q3 += '<li class=""><input name="q3" type="radio" value="on" id="w3b"><label for="w3b"><span class="hide">(3b)</span><b>Yes</b>, I have had a medical event or change in my overall health, since my last comprehensive medical examination and CMEC were completed </label><div class="answer wshow"><p class="warn"><b>Discuss any medical events or newly diagnosed conditions with your physician to make sure these will not affect your ability to be PIC. Under 14 C.F.R. &#167; 61.53, you are always responsible for evaluating your health before every flight, whether flying under BasicMed or holding an FAA-issued medical certificate.</p></div></li>';
+      q3 += '</ul>';
+
+      q4 = '<ul class="choices-collapsed"><li class=""><span class="hide">(4)</span> <span class="green hide">(24-month renewal path)</span> Do you have your completed CMEC from your last exam? It is required to complete the online BasicMed medical education course as certain information from it must be transmitted to the FAA.</li>';
+      q4 += '<li class=""><input name="q4" type="radio" value="on" id="b4"><label for="b4"><span class="hide">(4a)</span> <b>Yes</b>, I have it right here with my logbook or in an electronic format</label></li>';
+      q4 += '<li class=""><input name="q4" type="radio" value="on" id="a4"><label for="a4"><span class="hide">(4b)</span>	<b>No</b>, I can\'t find the CMEC document from my previous exam</label></li>';
+      q4 += '</ul>';
+
+
+
+
+
+////////////////add warning text
+      q5 = '<ul class="choices-collapsed"><li class=""><span class="hide">(5)</span>Do any of the changes in your health or a previously unreported medical event require a one-time special issuance?';
+      q5 += '<p class="nbld"><b>Before responding to this question</b>, please review the conditions that require a one-time special issuance-<b>this applies whether you are new to BasicMed or want to complete a 24-month or 48-month BasicMed renewal:</b> <a href="#/" id="mental">mental health disorder</a>, <a href="#/" id="neurological">neurological disorder</a>, or <a href="#/" id="cardio">cardiovascular condition</a>. </p>';
+      q5 += '<div class="mental nbld" style="display:none;">';
+      q5 += ' <dl>';
+      q5 += '   <dt><b>Mental health disorders</b> that require a special issuance to fly under BasicMed:</dt>';
+      q5 += '   <dd>Personality disorder severe enough to have repeatedly manifested itself by overt acts</dd>';
+      q5 += '   <dd>Psychosis, defined as a case in which an individual -</dd>';
+      q5 += '     <dd class="lf20">Has manifested delusions, hallucinations, grossly bizarre or disorganized behavior, or other commonly accepted symptoms of psychosis; or</dd>';
+      q5 += '     <dd class="lf20">May reasonably be expected to manifest delusions, hallucinations, grossly bizarre or disorganized behavior, or other commonly accepted symptoms of psychosis;</dd>';
+      q5 += '   <dd>Bipolar disorder</dd>';
+      q5 += '   <dd>Substance dependence within the previous two years, as defined in <a href="https://www.ecfr.gov/cgi-bin/text-idx?node=se14.2.67_1307&rgn=div8" target="_blank">14 C.F.R. &#167; 67.307(a)(4)</a> .</dd></dl>';
+      q5 += '     </p>Review the FAA website for <a href="https://www.faa.gov/licenses_certificates/airmen_certification/basic_med/" target="_blank">full details on conditions that require special issuance</a>.</p> ';
+      q5 += '</div>';
+      q5 += '<div class="neurological nbld" style="display:none;">';
+      q5 += ' <dl>';
+      q5 += '   <dt><b>Neurological disorders </b>that require a special issuance to fly under BasicMed:</dt>';
+      q5 += '     <dd>Epilepsy</dd>';
+      q5 += '     <dd>Disturbance of consciousness without satisfactory medical explanation of the cause (for example, you pass out for an unknown reason)</dd>';
+      q5 += '     <dd>A transient loss of control of nervous system functions without satisfactory medical explanation of the cause. </dd>';
+      q5 += ' </dl>';
+      q5 += '     </p>Review the FAA website for <a href="https://www.faa.gov/licenses_certificates/airmen_certification/basic_med/" target="_blank">full details on conditions that require special issuance</a>.</p> ';
+      q5 += '</div>';
+      q5 += '<div class="cardio nbld" style="display:none;">';
+      q5 += ' <dl>';
+      q5 += '   <dt><b>Cardiovascular conditions </b>that require a special issuance to fly under BasicMed:</dt>';
+      q5 += '     <dd>Myocardial infarction (heart attack)</dd>';
+      q5 += '     <dd>Coronary heart disease that has required treatment</dd>';
+      q5 += '     <dd>Cardiac valve replacement</dd>';
+      q5 += '     <dd>Heart replacement</dd>';
+      q5 += ' </dl>';
+      q5 += '     </p>Review the FAA website for <a href="https://www.faa.gov/licenses_certificates/airmen_certification/basic_med/" target="_blank">full details on conditions that require special issuance</a>.</p> ';
+      q5 += '</div>';
+      q5 += '</li>';
+      q5 += '<li class=""><input name="q5" type="radio" value="on" id="q6"><label for="q6"><span class="hide">(5a)</span><b>No</b>, my condition or medical event does not require a special issuance</label></li>';
+      q5 += '<li class=""><input name="q5" type="radio" value="on" id="w5b"><label for="w5b"><span class="hide">(5b)</span><b>Yes</b>, my condition or medical event falls in one of these categories</label><div class="answer wshow"><p class="warn">Note: For certain conditions, you are required to complete the process to obtain a one-time special issuance prior to flying under BasicMed.</p></div></li>';
+      q5 += '</ul>';
+
+      q6 = '<ul class="choices-collapsed"><li class=""><span class="hide">(6)</span>Have you been clinically diagnosed with any <!--<a href="#/" id="mental1">-->mental health condition<!--</a>-->?';
+      q6 += '<div class="mental1 nbld" style="display:none;">';
+      q6 += ' <dl>';
+      q6 += '   <dt><b>Mental health disorders</b> that require a special issuance to fly under BasicMed:</dt>';
+      q6 += '   <dd>Personality disorder severe enough to have repeatedly manifested itself by overt acts</dd>';
+      q6 += '   <dd>Psychosis, defined as a case in which an individual -</dd>';
+      q6 += '     <dd class="lf20">Has manifested delusions, hallucinations, grossly bizarre or disorganized behavior, or other commonly accepted symptoms of psychosis; or</dd>';
+      q6 += '     <dd class="lf20">May reasonably be expected to manifest delusions, hallucinations, grossly bizarre or disorganized behavior, or other commonly accepted symptoms of psychosis;</dd>';
+      q6 += '   <dd>Bipolar disorder</dd>';
+      q6 += '   <dd>Substance dependence within the previous two years, as defined in <a href="https://www.ecfr.gov/cgi-bin/text-idx?node=se14.2.67_1307&rgn=div8" target="_blank">14 C.F.R. &#167; 67.307(a)(4)</a> .</dd></dl>';
+      q6 += '     </p>Review the FAA website for <a href="https://www.faa.gov/licenses_certificates/airmen_certification/basic_med/" target="_blank">full details on conditions that require special issuance</a>.</p> ';
+      q6 += '</div>'
+      q6 += '</li>';
+      q6 += '<li class=""><input name="q6" type="radio" value="on" id="q8"><label for="q8"><span class="hide">(6a)</span><b>No</b>, my condition is not mental health related </label></li>';
+      q6 += '<li class=""><input name="q6" type="radio" value="on" id="q7"><label for="q7"><span class="hide">(6b)</span><b>Yes</b>, my condition is categorized as mental health related </label></li>';
+      q6 += '</ul>';
+
+      q7 = '<ul class="choices-collapsed"><li class=""><span class="hide">(7)</span>In the judgment of your state-licensed medical specialist, does the condition (1) render you unable to safely operate under BasicMed; or (2) May the condition reasonably be expected to make you unable to operate under BasicMed?</li>';
+      q7 += '<li class=""><input name="q7" type="radio" value="on" id="q8D"><label for="q8D"><span class="hide">(7a)</span><b>No</b></label></li>';
+      q7 += '<li class=""><input name="q7" type="radio" value="on" id="a7a"><label for="a7a"><span class="hide">(7b)</span><b>Yes</b></label></li>';
+      q7 += '</ul>';
+
+      q8 = '<ul class="choices-collapsed"><li class=""><span class="hide">(8)</span>	Have you been clinically diagnosed with any <!--<a href="#/" id="neurological1">-->neurologic condition<!--</a>-->?';
+      q8 += '<div class="neurological1 nbld" style="display:none;">';
+      q8 += ' <dl>';
+      q8 += '   <dt><b>Neurological disorders </b>that require a special issuance to fly under BasicMed:</dt>';
+      q8 += '     <dd>Epilepsy</dd>';
+      q8 += '     <dd>Disturbance of consciousness without satisfactory medical explanation of the cause (for example, you pass out for an unknown reason)</dd>';
+      q8 += '     <dd>A transient loss of control of nervous system functions without satisfactory medical explanation of the cause. </dd>';
+      q8 += ' </dl>';
+      q8 += '     </p>Review the FAA website for <a href="https://www.faa.gov/licenses_certificates/airmen_certification/basic_med/" target="_blank">full details on conditions that require special issuance</a>.</p> ';
+      q8 += '</div>';
+      q8 += '</li>';
+      q8 += '<li class=""><input name="q8" type="radio" value="on" id="q14"><label for="q14"><span class="hide">(8a)</span><b>No</b>, my condition is not neurologic related </label></li>';
+      q8 += '<li class=""><input name="q8" type="radio" value="on" id="q9"><label for="q9"><span class="hide">(8b)</span><b>Yes</b>, my condition is categorized as neurologic related </label></li>';
+      q8 += '</ul>';
+
+      q9 = '<ul class="choices-collapsed"><li class=""><span class="hide">(9)</span> In the judgment of your state-licensed medical specialist, does the condition (1) render you unable to safely operate under BasicMed; or 2) May the condition reasonably be expected to make you unable to operate under BasicMed?</li>';
+      q9 += '<li class=""><input name="q9" type="radio" value="on" id="q14D"><label for="q14D"><span class="hide">(9a)</span><b>No</b></label></li>';
+      q9 += '<li class=""><input name="q9" type="radio" value="on" id="a9a"><label for="a9a"><span class="hide">(9b)</span><b>Yes</b></label></li>';
+      q9 += '</ul>';
+
+      q10 = '<ul class="choices-collapsed"><li class=""><span class="hide">(10)</span>Has your driver\'s license been suspended, revoked, or denied by the issuing agency for any reason, health related or not?</li>';
+      q10 += '<li class=""><input name="q10" type="radio" value="on" id="q11"><label for="q11"><span class="hide">(10a)</span><b>No</b></label>';
+      q10 += '<div class="answer new48q5no"><p class="warn">Please review <a href="https://www.ecfr.gov/current/title-14/chapter-I/subchapter-D/part-61/subpart-A/section-61.53" target="_blank">14 C.F.R. 61.53</a> and carefully review the attestations required when completing the online BasicMed medical education course</p></div>';
+      q10 += '<div class="answer month24q5no"><p class="warn">Reminder, you need to evaluate your health before every flight. If you have noticed a change in your overall health, consider whether it impacts your fitness to fly under BasicMed. If appropriate, consult with your state-licensed physician.</p></div>';
+      q10 += '</li>';
+      q10 += '<li class=""><input name="q10" type="radio" value="on" id="a10a"><label for="a10a"><span class="hide">(10b)</span><b>Yes</b></label></li>';
+      q10 += '</ul>';
+
+      q11 = '<ul class="choices-collapsed"><li class=""><span class="hide">(11)</span> <span class="green hide">(New or 48-month renewal paths)</span> Have you already had your new comprehensive medical examination and Comprehensive Medical Examination Checklist (CMEC) completed by a state-licensed physician?</li>';
+      q11 += '<li class=""><input name="q11" type="radio" value="on" id="a11a"><label for="a11a"><span class="hide">(11a)</span><b>Yes</b>, I have, and I am ready for the next step</label></li>';
+      q11 += '<li class=""><input name="q11" type="radio" value="on" id="a11b"><label for="a11b"><span class="hide">(11b)</span><b>No</b>, I have not</label></li>';
+      q11 += '</ul>';
+
+      q12 = '<ul class="choices-collapsed"><li class=""><span class="hide">(12)</span> <span class="green hide">(New)</span> Was your most recent FAA-issued medical valid after July 14, 2006?<p><b>Not sure?</b> <a href="https://amsrvs.registry.faa.gov/airmeninquiry/Main.aspx" target="_blank">Look yourself up in the Airmen Registry</a></p></li>';
+      q12 += '<li class=""><input name="q12" type="radio" value="on" id="q13"><label for="q13"><span class="hide">(12a)</span><b>Yes</b>, it was after July 14, 2006 </label></li>';
+      q12 += '<li class=""><input name="q12" type="radio" value="on" id="a12b"><label for="a12b"><span class="hide">(12b)</span><b>No</b>, it was on or before July 14, 2006</label></li>';
+      q12 += '<li class=""><input name="q12" type="radio" value="on" id="a12c"><label for="a12c"><span class="hide">(12c)</span><b>No</b>, I have not held an FAA-issued medical before (e.g., I am a student pilot or sport pilot who has never held a medical)</label></li>';
+  //    q12 += '<li class=""><input name="q12" type="radio" value="on" id="a12d"><label for="a12d">(12d)	I\'m not sure </label></li>';
+      q12 += '</ul>';
+
+      q13 = '<ul class="choices-collapsed"><li class=""><span class="hide">(13)</span> Was your most recent FAA-issued medical certificate suspended (at any time) or revoked, your most recent FAA medical application denied, or your most recent Authorization for Special Issuance withdrawn for any reason?<p><b>Not sure?</b> <a href="https://amsrvs.registry.faa.gov/airmeninquiry/Main.aspx" target="_blank">Look yourself up in the Airmen Registry</a></p></li>';
+      q13 += '<li class=""><input name="q13" type="radio" value="on" id="q5DDD"><label for="q5DDD"><span class="hide">(13a)</span> <b>No</b>, my most recent FAA-issued medical is still current <i>OR</i> I held an FAA medical certificate at any point after July 14, 2006 and it has expired. </label></li>';
+      q13 += '<li class=""><input name="q13" type="radio" value="on" id="a13b"><label for="a13b"><span class="hide">(13b)</span> <b>Yes</b>, my most recent FAA-issued medical certificate was suspended or revoked, most recent FAA medical application denied, or my most recent Authorization for Special Issuance was withdrawn.</li>';
+    //  q13 += '<li class=""><input name="q13" type="radio" value="on" id="a13c"><label for="a13c">(13c) I\'m not really sure</label></li>';
+      q13 += '</ul>';
+
+      q14 = '<ul class="choices-collapsed"><li class=""><span class="hide">(14)</span> Have you been clinically diagnosed with any of the following four cardiovascular conditions that require a special issuance to fly under BasicMed?<dl><dd>Myocardial infarction (heart attack)</dd><dd>Coronary heart disease that has required treatment</dd><dd>Cardiac valve replacement</dd><dd>Heart replacement</dd></dl></li>';
+      q14 += '<li class=""><input name="q14" type="radio" value="on" id="q10D"><label for="q10D"><span class="hide">(14a)</span><b>No</b> my condition is not cardiovascular related or is not listed above.</label></li>';
+      q14 += '<li class=""><input name="q14" type="radio" value="on" id="a14b"><label for="a14b"><span class="hide">(14b)</span><b>Yes</b> YES, my condition is a cardiovascular condition is listed above. </label></li>';
+      q14 += '</ul>';
+
+///////////////////////// answers and Warning text
+
+      a4 = '  <ul class="choices-collapsed">';
+      a4 += '    <li class="answer">';
+      a4 += '      <p class="warn">WARNING! You need to have your most recent CMEC and online course completion certificate with your logbook. You can also store them electronically in any format, as long as you can produce an accurate and legible representation of these documents at the request of the FAA. You don\'t have to carry either of these documents in any form while flying under BasicMed. However, if you have lost either of them you are not qualified to fly under BasicMed. Pilots flying without meeting the appropriate medical qualification regulations can face FAA legal enforcement action, such as revocation of their pilot certificate, and other serious penalties.</p><p>To complete an FAA approved online BasicMed medical education course and receive your course completion certificate, you are required to fill out a form that will transmit certain information to the FAA, including specific information that you must provide from your completed CMEC. Federal Aviation Regulations, such as 14 C.F.R. &#167; 61.59, prohibit any person from making or causing to be made any fraudulent or intentionally false entries in any required logbook, record, or report and violation of these rules can result in the revocation of all FAA certificates as well as serious criminal penalties.</p><p>If you are unable to locate your previous CMEC, we suggest you contact your CMEC exam physician and ask if they have a copy of the actual checklist in your medical records. </p><p>If you are unable to find a copy of your CMEC, you will need to download a new CMEC and undergo a new comprehensive medical examination by a state-licensed physician. You also need to complete an FAA approved online BasicMed medical education course and receive a certificate of completion.</p><p>Remember, it is critical that you keep both your CMEC and course completion certificate documents with your logbook or in an electronic format to remain legal to fly under BasicMed.</p>';
+      a4 += '       <a href="/Advocacy/Pilots/Medical/BasicMed/BasicMed48MonthSummary" class="button">VIEW YOUR BASICMED RESULTS</a>';//b
+      a4 += '    </li>';
+      a4 += '  </ul>';
+
+
+      a2 = '  <ul class="choices-collapsed">';
+      a2 += '    <li class="answer">';
+      a2 += '      <p><b>Not sure?</b> <a href="https://amsrvs.registry.faa.gov/airmeninquiry/Main.aspx" target="_blank">Look yourself up in the Airmen Registry</a></p>';
+      a2 += '    </li>';
+      a2 += '  </ul>';
+
+      a7a = '  <ul class="choices-collapsed">';
+      a7a += '    <li class="answer">';
+      a7a += '      <p class="warn"><a href="https://www.ecfr.gov/cgi-bin/text-idx?SID=aef10c28291cb6f231a0148235227804&mc=true&node=se14.2.68_19&rgn=div8" target="_blank">14 C.F.R. 68.9(c)(1)(i)</a> prohibits an individual with a clinically diagnosed mental health condition from operating under BasicMed under these circumstances.</p>';
+      a7a += '       <a href="/Advocacy/Pilots/Medical/BasicMed/BasicMedCommonDisqualifications" class="button">VIEW YOUR BASICMED RESULTS</a>'; //d
+      a7a += '    </li>';
+      a7a += '  </ul>';
+
+      a9a = '  <ul class="choices-collapsed">';
+      a9a += '    <li class="answer">';
+      a9a += '      <p class="warn"><a href="https://www.ecfr.gov/cgi-bin/text-idx?SID=aef10c28291cb6f231a0148235227804&mc=true&node=se14.2.68_19&rgn=div8" target="_blank">14 C.F.R. 68.9(c)(1)(i)</a> prohibits an individual with a clinically diagnosed neurologic condition from operating under BasicMed under these circumstances.</p>';
+      a9a += '       <a href="/Advocacy/Pilots/Medical/BasicMed/BasicMedCommonDisqualifications" class="button">VIEW YOUR BASICMED RESULTS</a>'; //d
+      a9a += '    </li>';
+      a9a += '  </ul>';
+
+      a14b = '  <ul class="choices-collapsed">';
+      a14b += '    <li class="answer">';
+      a14b += '      <p class="warn">You are required to complete the process to obtain a one-time special issuance prior to flying under BasicMed. See <a href="https://www.ecfr.gov/cgi-bin/text-idx?node=pt14.2.68&rgn=div5" target="_blank">14 C.F.R. 68.9(a)(3)</a>.</p>';
+      a14b += '    </li>';
+      a14b += '  </ul>';
+
+      a10a = '  <ul class="choices-collapsed">';
+      a10a += '    <li class="answer">';
+      a10a += '      <p class="warn">Pilots operating under BasicMed must hold a current and valid U.S. driver\'s license and comply with all medical requirements or restrictions associated with that license. If your U.S. driver\'s license has been revoked or rescinded for any reason are not eligible for BasicMed unless and until your U.S. driver\'s license is reinstated.</p>';
+      a10a += '      <p class="warn">If your driver\'s license was revoked as the result of a clinically diagnosed mental health condition or neurological condition, see <a href="https://www.ecfr.gov/cgi-bin/text-idx?SID=aef10c28291cb6f231a0148235227804&mc=true&node=se14.2.68_19&rgn=div8" target="_blank">14 C.F.R. &#167; 68.9.</p>';
+      a10a += '       <a href="/Advocacy/Pilots/Medical/BasicMed/BasicMedCommonDisqualifications" class="button">VIEW YOUR BASICMED RESULTS</a>'; //d
+      a10a += '    </li>';
+      a10a += '  </ul>';
+
+      a10b = '  <ul class="choices-collapsed">';
+      a10b += '    <li class="answer">';
+      a10b += '      <p class="warn">Pilots operating under BasicMed must hold a current and valid U.S. driver\'s license and comply with all medical requirements or restrictions associated with that license. If your U.S. driver\'s license has been revoked or rescinded for any reason are not eligible for BasicMed unless and until your U.S. driver\'s license is reinstated.</p>';
+      a10b += '      <p class="warn">If your driver\'s license was revoked as the result of a clinically diagnosed mental health condition or neurological condition, see <a href="https://www.ecfr.gov/cgi-bin/text-idx?SID=aef10c28291cb6f231a0148235227804&mc=true&node=se14.2.68_19&rgn=div8" target="_blank">14 C.F.R. &#167; 68.9.</p>';
+      a10b += '    </li>';
+      a10b += '  </ul>';
+
+      a10reg = '  <ul class="choices-collapsed">';
+      a10reg += '    <li class="answer">';
+      a10reg += '       <a href="/Advocacy/Pilots/Medical/BasicMed/NewToBasicMedSummary" class="button">VIEW YOUR BASICMED RESULTS</a>'; //check list b
+      a10reg += '    </li>';
+      a10reg += '  </ul>';
+
+      a11a = '  <ul class="choices-collapsed">';
+      a11a += '    <li class="answer">';
+      a11a += '       <a href="/Advocacy/Pilots/Medical/BasicMed/BasicMed24MonthSummary" class="button">VIEW YOUR BASICMED RESULTS</a>'; //A24
+      a11a += '    </li>';
+      a11a += '  </ul>';
+
+// checklist download B 48R
+      a11b = '  <ul class="choices-collapsed">';
+      a11b += '    <li class="answer">';
+      a11b += '      <p class="warn">Remember, make sure to take time to review your overall health with you physician, especially if you have had any recent changes to your health.</p>';
+      a11b += '       <a href="/Advocacy/Pilots/Medical/BasicMed/BasicMed48MonthSummary" class="button">VIEW YOUR BASICMED RESULTS</a>';//b48
+      a11b += '    </li>';
+      a11b += '  </ul>';
+
+      a1112a = '  <ul class="choices-collapsed">';
+      a1112a += '    <li class="answer">';
+      a1112a += '      <p class="warn">Remember, make sure to take time to review your overall health with you physician, especially if you have had any recent changes to your health.</p>';
+      a1112a += '       <a href="/Advocacy/Pilots/Medical/BasicMed/NewToBasicMedSummary" class="button">VIEW YOUR BASICMED RESULTS</a>';//b new
+      a1112a += '    </li>';
+      a1112a += '  </ul>';
+
+      a12b = '  <ul class="choices-collapsed">';
+      a12b += '    <li class="answer">';
+      a12b += '      <p class="warn">Currently, you are not eligible to fly under BasicMed. You will need to have a medical exam by an aviation medical examiner and obtain a new FAA-issued medical certificate before you can be eligible to fly under BasicMed. To learn what you need to do to get your FAA medical, click the button below.</p>';
+      a12b += '       <a href="/Advocacy/Pilots/Medical/BasicMed/BasicMedCommonDisqualifications" class="button">VIEW YOUR BASICMED RESULTS</a>'; //d
+      a12b += '    </li>';
+      a12b += '  </ul>';
+
+      a12c = '  <ul class="choices-collapsed">';
+      a12c += '    <li class="answer">';
+      a12c += '      <p class="warn">Currently, you are not eligible to fly under BasicMed. You will need to have a medical exam by an aviation medical examiner and obtain a one-time FAA-issued medical certificate before you can be eligible to fly under BasicMed. To learn what you need to do to get your first FAA medical, click the button below.</p>';
+      a12c += '       <a href="/Advocacy/Pilots/Medical/BasicMed/BasicMedCommonDisqualifications" class="button">VIEW YOUR BASICMED RESULTS</a>'; //d
+      a12c += '    </li>';
+      a12c += '  </ul>';
+
+      a13b = '  <ul class="choices-collapsed">';
+      a13b += '    <li class="answer">';
+      a13b += '      <p class="warn"> Notice you are not currently eligible to fly under BasicMed if your most recent FAA Medical was suspended, revoked, denied, or withdrawn for any reason. A new AME medical review and new medical certificate is required before you can fly under BasicMed. Learn what you need to do to get your FAA Medical, click the button below</p>';
+      a13b += '       <a href="/Advocacy/Pilots/Medical/BasicMed/BasicMedCommonDisqualifications" class="button">VIEW YOUR BASICMED RESULTS</a>'; //d
+      a13b += '    </li>';
+      a13b += '  </ul>';
+
+      a10checklistC = '  <ul class="choices-collapsed">';
+      a10checklistC += '    <li class="answer">';
+      a10checklistC += '       <a href="/Advocacy/Pilots/Medical/BasicMed/BasicMedSpecialIssuance" class="button">VIEW YOUR BASICMED RESULTS</a>'; //check list c
+      a10checklistC += '    </li>';
+      a10checklistC += '  </ul>';
+
+      a13c = a2;
+      a12d = a2;
+
+      b4 = a11a
+
+        w2c = "";
+        w3b = "";
+        w5b = "";
+
+      // add the question q5 to the warning message
+      w2c += q5;
+      w3b += q5;
+      w5b += q6;
+      a14b += q10;
+
+    $("ul#tree").html(q1);
+    $("ul#tree li ul").addClass("choices-collapsed"); // Hides subquestions at start
+
+
+
+
+
+$(document).on('click', '#tree li input', function() {
+//    $("#tree li input").click(function(event) { //Reveals subquestions for selected choice, hides choices not selected
+      var lsid = $(this).attr('id');
+  // setting question variables for memory
+// w2c = 2c, more than 48 months
+      if (lsid == "w2c") {
+        sessionStorage.setItem("more48months", "yes"); // 2c more than 48 months
+      }
+// q13 = 12a, 12a) Yes, it was after July 14, 2006
+      if (lsid == "q13") {
+        sessionStorage.setItem("newmember12a", "yes");//12a it was after july 14 2006
+      }
+
+      if (lsid == "q12") {
+        sessionStorage.setItem("newmember", "yes");
+      }
+// q5 = 2b, almost 48 months
+      if (lsid == "q5") {
+        sessionStorage.setItem("month48", "yes");// 2b
+      }
+// q6 = 5a, No my condition or medical event does not require a special issuance
+      if (lsid == "q6") {
+        sessionStorage.setItem("q5no", "no");
+      }
+      if (lsid == "w5b") {  //5b yes
+        sessionStorage.setItem("q5yes", "yes");
+      }
+      if (lsid == "q3") {
+        sessionStorage.setItem("month24", "yes");  //2a
+      }
+// questions 6-9
+      if (lsid == "q8") {
+        sessionStorage.setItem("q6no", "no");
+      }
+      //7
+      if (lsid == "q8D") {
+        sessionStorage.setItem("q7no", "no");
+      }
+      //8
+      if (lsid == "q8") {
+        sessionStorage.setItem("q8no", "no");
+      }
+      //9
+      if (lsid == "q10D") {
+        sessionStorage.setItem("q10Dno", "no");
+      }
+      if (lsid == "a14b") {
+        sessionStorage.setItem("a14byes", "yes");
+      }
+
+      var newmember = sessionStorage.getItem("newmember");
+      var month48 = sessionStorage.getItem("month48");
+      var q5no = sessionStorage.getItem("q5no");
+      var q5yes = sessionStorage.getItem("q5yes");
+      var month24 = sessionStorage.getItem("month24");
+      var q6no = sessionStorage.getItem("q6no");
+      var q7no = sessionStorage.getItem("q7no");
+      var q8no = sessionStorage.getItem("q8no");
+      var q10Dno = sessionStorage.getItem("q10Dno");
+      var a14byes = sessionStorage.getItem("a14byes");
+      var newmember12a = sessionStorage.getItem("newmember12a");
+      var more48months = sessionStorage.getItem("more48months");
+
+
+      // 24-month that answered Q5 No send them to q4  - // If 2a and 5a  then go to Q4
+            if (month24 === "yes" && q5no === "no" && lsid === "q11") {
+              lsid = "q4";
+              //show the proper Warning box
+              $(".month24q5no, .new48q5no").show();
+            }
+
+      // New or 48-month 2b/2c/12a and 5a  = q11
+            if ((month48 === "yes" || more48months === "yes" || newmember12a === "yes") && (q5no === "no" && lsid === "q11")) {
+              lsid = "q11";
+              //show the proper Warning box
+              $(".new48q5no").show();
+            }
+
+      // any user 5b yes and /or  14b  = checklist C
+      if ((q5yes === "yes" || a14byes === "yes") && lsid === "q11") {
+        lsid = "a10checklistC";
+        //show the proper Warning box
+        $(".new48q5no").show();
+  }
+
+            // if 12a + 5a + 11b
+              if (newmember12a === "yes" && lsid === "a11b") {
+                lsid = "a1112a";
+                //show the proper Warning box
+                $(".new48q5no").show();
+              }
+
+
+  /*    if (newmember === "yes" && q5no === "no" && lsid === "q11") {
+        lsid = "q11";
+        //show the proper Warning box
+        $(".month24q5no").show();
+      }
+
+// 2b=month48/2c=more48months/12a=newmember12a and 5a is NO than go to q11
+      if (month48 === "yes" || more48months === "yes" || newmember12a === "yes" &&  lsid === "q11") {
+      //  lsid = "q11";
+        //show the proper Warning box
+        $(".new48q5no").show();
+      }
+*/
+
+  //    if (newmember === "yes" || month24 === "yes" || month48 === "yes" || q6no === "no" || q7no === "no" || q8no == "no" || q10Dno === "no" && lsid === "q11" && q5yes === "yes") {
+  //      lsid = "a10reg";
+  //    }
+
+      lsid = lsid.replace("DDD","");
+      lsid = lsid.replace("DD","");
+      lsid = lsid.replace("D","");
+
+
+      $(event.target).parent().append(eval(lsid));
+      $(event.target).parent().addClass("choice-selected");
+      $(event.target).nextAll().removeClass("choices-collapsed");
+      $(event.target).parent().nextAll().addClass("choices-collapsed");
+      $(event.target).parent().prevAll().addClass("choices-collapsed");
+      $(event.target).attr("disabled", true);
+      $(event.target).parent().parent().children("li:first-child").addClass("show");
+
+      $(event.target).siblings(".wshow").addClass("show");
+      });
+
+  /*  $("#goBack").click(function(event) { //Undoes last selection
+       $('li.choice-selected:last').children("ul").addClass("choices-collapsed");
+       $('li.choice-selected:last').nextAll().removeClass("choices-collapsed");
+       $('li.choice-selected:last').prevAll().removeClass("choices-collapsed");
+       $('li.choice-selected:last').removeClass("choice-selected").children("input").prop("checked",false).attr("disabled", false);
+    });
+    major Turbo F since we have questions that depend on history
+    */
+
+    $("#reset").click(function(event) { //Resets to initial state
+      $('#tree li').removeClass("choices-collapsed");
+      $('#tree li').removeClass("choice-selected");
+      $('#tree input').prop("checked",false);
+      $("ul#tree li ul").addClass("choices-collapsed");
+      $("ul#tree").html(q1);
+      sessionStorage.clear();
+    });
+
+});
+// hide and show the 3 conditions
+    $(document).on("click", "#mental", function() {
+                $('.mental').toggle();
+        });
+    $(document).on("click", "#neurological", function() {
+                $('.neurological').toggle();
+        });
+    $(document).on("click", "#cardio", function() {
+                $('.cardio').toggle();
+        });
+    $(document).on("click", "#mental1", function() {
+                $('.mental1').toggle();
+        });
+    $(document).on("click", "#neurological1", function() {
+                $('.neurological1').toggle();
+        });
+
+</script>

@@ -2736,6 +2736,12 @@ require = (function e(t, r, i) {
             .when(q.InfoRouter.welcomeRoute, {
               templateUrl: s.template("info/welcome.html"),
             })
+            .when(q.InfoRouter.renewalRoute, {
+              templateUrl: s.template("info/renewal.html"),
+            })
+            .when(q.InfoRouter.eligibilityRoute, {
+              templateUrl: s.template("info/eligibility.html"),
+            })
             .when(Z.ReferenceRouter.indexRoute, {
               templateUrl: s.template("reference/index.html"),
             })
@@ -15001,12 +15007,72 @@ require = (function e(t, r, i) {
     "./../utils/PageHeaderHelper": 231,
   },
 ],
+1102: [
+  function (e, t, r) {
+    var i = e("./../utils/MenuHelper"),
+        s = e("./../utils/PageHeaderHelper"),
+        o = e("../utils/UrlService"),
+        n = (function () {
+          function e(e, t) {
+            this.$location = e;
+            this.url = t;
+
+            i.MenuHelper.setCurrentMenuItem(i.MenuHelper.RENEWAL_MENU_KEY);
+            s.PageHeader.set().header("Renewal Calendar Input").update();
+          }
+
+          return (
+            e.NAME = "info.RenewalController",
+            e.$inject = ["$location", o.UrlService.NAME],
+            e
+          );
+        })();
+
+    r.RenewalController = n;
+  },
+  {
+    "../utils/UrlService": 236,
+    "./../utils/MenuHelper": 227,
+    "./../utils/PageHeaderHelper": 231,
+  },
+],
+1103: [
+  function (e, t, r) {
+    var i = e("./../utils/MenuHelper"),
+        s = e("./../utils/PageHeaderHelper"),
+        o = e("../utils/UrlService"),
+        n = (function () {
+          function e(e, t) {
+            this.$location = e;
+            this.url = t;
+
+            i.MenuHelper.setCurrentMenuItem(i.MenuHelper.ELIGIBILITY_MENU_KEY);
+            s.PageHeader.set().header("Eligibility and Renewal Tool").update();
+          }
+
+          return (
+            e.NAME = "info.EligibilityController",
+            e.$inject = ["$location", o.UrlService.NAME],
+            e
+          );
+        })();
+
+    r.EligibilityController = n;
+  },
+  {
+    "../utils/UrlService": 236,
+    "./../utils/MenuHelper": 227,
+    "./../utils/PageHeaderHelper": 231,
+  },
+],
     102: [
       function (e, t, r) {
         var i = e("./AboutProjectController"),
           s = e("./AboutCompanyController"),
           o = e("./FAQController"),
           n = e("./ContactsController"),
+          z = e("./RenewalController"),
+          y = e("./EligibilityController"),
           w = e("./WelcomeController");
         r.InfoModule = angular
           .module("info", [])
@@ -15014,6 +15080,8 @@ require = (function e(t, r, i) {
           .controller(s.AboutCompanyController.NAME, s.AboutCompanyController)
           .controller(o.FAQController.NAME, o.FAQController)
           .controller(n.ContactsController.NAME, n.ContactsController)
+          .controller(z.RenewalController.NAME, z.RenewalController)
+          .controller(y.EligibilityController.NAME, y.EligibilityController)
           .controller(w.WelcomeController.NAME, w.WelcomeController);
       },
       {
@@ -15021,6 +15089,8 @@ require = (function e(t, r, i) {
         "./AboutProjectController": 99,
         "./ContactsController": 100,
         "./FAQController": 101,
+        "./RenewalController": 1102,
+        "./EligibilityController": 1103,
         "./WelcomeController": 1101,
       },
     ],
@@ -23985,6 +24055,12 @@ require = (function e(t, r, i) {
                 (t.prototype.welcomeUrl = function () {
                 return this.url(t.welcomeRoute);
               }),
+              (t.prototype.renewalUrl = function () {
+                return this.url(t.renewalRoute);
+              }),
+              (t.prototype.eligibilityUrl = function () {
+                return this.url(t.eligibilityRoute);
+              }),
               (t.prototype.faqUrl = function () {
                 return this.url(t.faqRoute);
               }),
@@ -23996,6 +24072,8 @@ require = (function e(t, r, i) {
               (t.aboutCompanyRoute = "/info/about/company"),
               (t.faqRoute = "/info/faq"),
               (t.welcomeRoute = "/info/welcome"),
+              (t.renewalRoute = "/info/renewal"),
+              (t.eligibilityRoute = "/info/eligibility"),
               (t.contactsRoute = "/info/contacts"),
               (t.$inject = ["$location"]),
               t
@@ -26059,6 +26137,8 @@ require = (function e(t, r, i) {
             (e.ABOUT_COMPANY_MENU_KEY = "about_company"),
             (e.FAQ_MENU_KEY = "faq"),
             (e.WELCOME_MENU_KEY = "welcome"),
+            (e.RENEWAL_MENU_KEY = "renewal"),
+            (e.ELIGIBILITY_MENU_KEY = "eligibility"),
             (e.CONTACTS_MENU_KEY = "contacts"),
             (e.PERSONAL_ACCOUNT_MENU_KEY = "personal_account"),
             (e.PERSONAL_ACCOUNT_UPLOADS_MENU_KEY = "personal_account_uploads"),

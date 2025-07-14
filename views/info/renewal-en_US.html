@@ -1,0 +1,81 @@
+<div ng-controller="info.RenewalController as vm" class="l-wrapper tcMedContent">
+
+    <div ng-include="::vm.url.template('common/_page-styles.html')"></div>
+    <div class="l-wrapper tcMedContent">
+        <div class="contentPanel1">
+            <h1>Welcome Back</h1>
+            <h2>Let&apos;s see what you&apos;ll need to renew</h2>
+            <p>You’ve gone through the BasicMed process before, so you know the drill. Now it’s easier than ever to
+                renew or requalify for your BasicMed certificate. Enter the information below to find out when you’re
+                due for a renewal and the steps you need to complete.</p>
+            
+            <div style="text-align: center;">
+                   <p><em><strong>Don’t remember your dates?</strong></em> Confirm in the <a
+                    href="https://amsrvs.registry.faa.gov/airmeninquiry/" target="_blank"
+                    alt="Find your BasicMed completion dates on the FAA’s Airman Registry">FAA’s Airman Registry</a>.
+            </p>
+            <!--START Renewal Calendar (CENTER CONTENT)-->
+            
+                <p><strong>Type in your dates or click on the calendar icon to select the date.</strong></p>
+                <h3>Step 1: When was your last BasicMed Exam?</h3>
+                <!--Exam Date field-->
+                <input type="date" placeholder="MM/DD/YYYY" class="form-control">
+                <h3>Step 2: When did you last complete the BasicMed course?</h3>
+                <!--Course Date field-->
+                <input type="date" placeholder="MM/DD/YYYY" class="form-control">
+                <p><a href="##-magic" class="button btn btn-register-link" style="padding: 13px 35px !important; margin: 0 !important; font-size: 0.9em;">Get Your Renewal Steps</a></p>
+            </div>
+            <!--END Renewal Calendar -->
+            <!--START: Eligibility Tool Callout-->
+            <hr>
+            <h2>Any new health events since your last BasicMed application?</h2>
+            <p>Remember that you need to self-certify with each renewal. You can use the AOPA BasicMed Eligibility Tool
+                to help confirm your eligibility. Remember that ANY new medical events that pertain to certain cardiac,
+                neurological, or mental health conditions will require a new special issuance from the FAA, even if you
+                already have a special issuance for a different condition or event. </p>
+            <p style="text-align: center;"><a href="##-I-eligibilityTool" class="button btn btn-register-link" style="padding: 13px 35px !important; margin: 0 !important; font-size: 0.9em;">Eligibility Tool</a></p>
+            <!--END: Eligibility Tool Callout-->
+
+            <!-- Footer -->
+            <div class="haveQuestions" ng-include="::vm.url.template('common/_page-bottom-have-questions.html')"></div>
+        </div>
+
+        <div class="contentPanel2" ng-include="::vm.url.template('common/_page-right-panel-quick-links.html')"></div>
+    </div>
+</div>
+
+<style>
+    h3 {
+        color: #2e79a6 !important;
+        font-size: 1.4em;
+        margin: 0;
+    }
+
+    .step label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        margin: 1em 0 0.3em;
+    }
+
+    .step input[type="checkbox"] {
+        width: 1.4em;
+        height: 1.4em;
+        accent-color: #0079a4;
+        min-width: 1.4em;
+    }
+
+    .steps p {
+        margin-left: 2.2em;
+    }
+    .form-control {
+        width: 200px;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 8px;
+        border: 2px solid #0079a5;
+        border-radius: 4px;
+    }
+</style>
