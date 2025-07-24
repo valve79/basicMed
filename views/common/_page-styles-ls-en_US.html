@@ -1,0 +1,102 @@
+<link ng-href="{{::url.staticResourceUrl('./themes/aopa/css/site.css')}}" rel="stylesheet" type="text/css">
+<link ng-href="{{::url.staticResourceUrl('./themes/aopa/css/tcMed_fix.css')}}" rel="stylesheet" type="text/css"/>
+
+<style type="text/css">
+.tcMedTopBar {
+  width: 1200px;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: system-ui, sans-serif;
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: none !important;
+}
+
+.bm-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem 0.5rem;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.bm-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.bm-logo {
+  max-width: 170px;
+  height: auto;
+}
+
+.bm-logo-text h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #144057;
+}
+
+.bm-logo-text p {
+  margin: 0;
+  font-size: 1rem;
+  color: #3da0c9;
+}
+
+.bm-top-links {
+  position: absolute;
+  top: 0.5rem;
+  right: 2rem;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.bm-top-links a {
+  color: #144057;
+  text-decoration: none;
+  margin: 0 0.3rem;
+  font-weight: bold !important;
+}
+
+.bm-top-links a:hover {
+  text-decoration: underline;
+}
+
+.tcMed .tcMedTopBar h1 {
+    margin-top: 12px !important;
+    line-height: 1em;
+    font-size: 3.2em;
+    margin-left: 0 !important;
+}
+.tcMed .tcMedTopBar p {
+
+}
+
+@media screen and (min-width: 760px) {
+    .tcMed .tcMedTopBar > div {
+        width: 100%;
+    }
+}
+</style>
+<div class="tcMedTopBar">
+  <div class="bm-header-inner">
+    <div class="bm-logo-container">
+      <img class="bm-logo" src="/themes/aopa/css/tcMed/aopaLogo.png" alt="Medical Self-Assessment | A pilot's guide to flying healthy.">
+      <div class="bm-logo-text">
+        <h1>BasicMed</h1>
+        <p>Medical Self-Assessment Course</p>
+      </div>
+    </div>
+    <div class="bm-top-links">
+      <b><a href="##-B1">Create Account</a><a href="##-B2">Return Login</a></b>
+    </div>
+  </div>
+</div>
+
