@@ -4,12 +4,12 @@
     <li>
       <p><strong>You still need to see a doctor—but not an AME.</strong></p>
       <p>BasicMed doesn't eliminate medical exams. You need a physical by a state-licensed physician (MD or DO), not an Aviation Medical Examiner (AME), to complete your CMEC. This exam must be completed every 48 months, and it should be done <em><strong>before</strong></em> you take the online course. Make sure you keep your original completed CMEC form.</p>
-      <p><a href="##-FAQs-tab 1">Learn more BasicMed Overview</a></p>
+      <p><a href="/client/app.html#/info/faq#overview">Learn more BasicMed Overview</a></p>
     </li>
     <li>
       <p><strong>The online course is required—along with the medical exam.</strong></p>
       <p>You must complete both the medical exam (with a signed CMEC form every 48 months) and the online course (with a passing quiz and completion certificate every 24 months) to operate under BasicMed. The course must be renewed every 24 months by retaking the course and entering your CMEC information. Whenever you complete a new CMEC exam, you must retake the online course, and that CMEC information will be digitally sent to the FAA.</p>
-      <p><a href="##-FAQs-tab 1">Learn more BasicMed Overview</a></p>
+      <p><a href="/client/app.html#/info/faq#overview">Learn more BasicMed Overview</a></p>
     </li>
     <li>
       <p><strong>You are responsible for keeping your own records.</strong></p>
@@ -18,65 +18,88 @@
     <li>
       <p><strong>Renewals are due by the end of the month—not the exact date.</strong></p>
       <p>Both the medical exam and online course now follow calendar month renewals. That means if your course or exam was done on the 10th of a month, your renewal is due by the last day of that month, 48 months later for the CMEC exam or 24 months later for the online course completion. Completing <strong>both</strong> the exam and the course in the same month helps keep things simple.</p>
-      <p><a href="##-FAQs-tab 1">Learn more BasicMed Overview</a></p>
+      <p><a href="/client/app.html#/info/faq#overview">Learn more BasicMed Overview</a></p>
     </li>
     <li>
       <p><strong>Some medical conditions still require FAA approval.</strong></p>
       <p>If you have a medical history, diagnosis, or recent event of certain cardiac, neurological, or mental health conditions, you will need a one-time only special issuance for each condition from the FAA, <em><strong>before</strong></em> qualifying for BasicMed. Remember, any new medical event of one of these types will require a new special issuance from the FAA, even if you are already flying under BasicMed.</p>
-      <p><a href="##-FAQs-tab 2">Learn more Disqualifying Conditions</a></p>
+      <p><a href="/client/app.html#/info/faq#disqualifying">Learn more Disqualifying Conditions</a></p>
     </li>
     <li>
       <p><strong>A withdrawn, denied, revoked, or suspended FAA medical disqualifies you.</strong></p>
       <p>If your most recent FAA medical was withdrawn, denied, suspended, or revoked—regardless of whether it was current—you are <span style="color:red"><strong><em>not eligible for BasicMed</em></strong></span>.</p>
-      <p><a href="##-FAQs-tab 2">Learn more Disqualifying Conditions</a></p>
+      <p><a href="/client/app.html#/info/faq#disqualifying">Learn more Disqualifying Conditions</a></p>
     </li>
     <li>
       <p><strong>BasicMed does not replace your pilot certificate.</strong></p>
       <p>You still need to hold a valid pilot certificate, complete flight reviews, and follow all relevant regulations. BasicMed is only a self-assessment program that allows you to fly without an FAA-issued medical certificate. It is not your license to fly.</p>
-      <p><a href="##-FAQs-tab 1">Learn more BasicMed Overview</a></p>
+      <p><a href="/client/app.html#/info/faq#overview">Learn more BasicMed Overview</a></p>
     </li>
     <li>
       <p><strong>You can't fly under BasicMed everywhere.</strong></p>
       <p>BasicMed is only valid in the U.S. and select countries that accept it (e.g., the Bahamas, Mexico, the Dominican Republic, Puerto Rico, and the U.S. Virgin Islands). Canada does not accept BasicMed.</p>
-      <p><a href="##-FAQs-tab 3">Learn more Flying Under BasicMed</a></p>
+      <p><a href="/client/app.html#/info/faq#flying">Learn more Flying Under BasicMed</a></p>
     </li>
     <li>
       <p><strong>There are limits to how fast and how high you can fly.</strong></p>
       <p>Under BasicMed, you can't fly faster than 250 knots or above 18,000 feet MSL. If you need to fly higher or faster, you'll need a traditional FAA medical certificate.</p>
-      <p><a href="##-FAQs-tab 3">Learn more Flying Under BasicMed</a></p>
+      <p><a href="/client/app.html#/info/faq#flying">Learn more Flying Under BasicMed</a></p>
     </li>
     <li>
       <p><strong>BasicMed is not just for “old” or retired pilots.</strong></p>
       <p>Any pilot who meets the requirements can fly under BasicMed. It's a great option for private pilots, CFIs, DPEs, or those who are not purely career pilots, for whom an FAA-issued medical is required. It can be simpler for the pilot, and there is less waiting time.</p>
-      <p><a href="##-FAQs-tab 1">Learn more BasicMed Overview</a></p>
+      <p><a href="/client/app.html#/info/faq#overview">Learn more BasicMed Overview</a></p>
     </li>
   </ol>
 </div>
 
-<!-- Add this script directly inside the same include file -->
 <script>
-(function waitForDidYouKnowList() {
-  var list = document.querySelector("#didYouKnowList");
+(function waitForListAndRandomize() {
+  const MAX_TRIES = 20;
+  let attempts = 0;
 
-  if (!list) {
-    // Try again in 100ms if the list hasn't loaded yet
-    setTimeout(waitForDidYouKnowList, 100);
-    return;
+  function tryRandomize() {
+    const list = document.getElementById("didYouKnowList");
+    if (!list) {
+      retry();
+      return;
+    }
+
+    const items = list.querySelectorAll("li");
+    if (items.length === 0) {
+      retry();
+      return;
+    }
+
+    // Check if already randomized (skip if already done)
+    const alreadyHidden = Array.from(items).every(item => item.style.display === "none");
+    if (alreadyHidden) return;
+
+    // Hide all
+    items.forEach(item => item.style.display = "none");
+
+    // Show one random
+    const index = Math.floor(Math.random() * items.length);
+    items[index].style.display = "block";
   }
 
-  var items = list.querySelectorAll("li");
-  if (items.length === 0) return;
+  function retry() {
+    if (attempts++ < MAX_TRIES) {
+      setTimeout(tryRandomize, 200);
+    }
+  }
 
-  // Hide all items
-  items.forEach(function (item) {
-    item.style.display = "none";
-  });
+  // Run it the first time
+  tryRandomize();
 
-  // Show one random item
-  var index = Math.floor(Math.random() * items.length);
-  items[index].style.display = "block";
+  // Run again after short delay in case of Angular tab flicker
+  setTimeout(tryRandomize, 1000);
 })();
 </script>
+
+
+
+
 
 
 <style>

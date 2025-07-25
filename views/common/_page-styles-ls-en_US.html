@@ -36,18 +36,31 @@
 .bm-logo {
   max-width: 170px;
   height: auto;
+  text-decoration: none;
 }
+.bm-logo-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.bm-logo-link:hover {
+  text-decoration: none !important;
+  color: inherit;
+}
+
 
 .bm-logo-text h1 {
   margin: 0;
   font-size: 1.8rem;
   color: #144057;
+  text-decoration: none;
 }
 
 .bm-logo-text p {
   margin: 0;
   font-size: 1rem;
   color: #3da0c9;
+  text-decoration: none;
 }
 
 .bm-top-links {
@@ -66,7 +79,7 @@
 }
 
 .bm-top-links a:hover {
-  text-decoration: underline;
+  text-decoration: none !important;
 }
 
 .tcMed .tcMedTopBar h1 {
@@ -87,15 +100,19 @@
 </style>
 <div class="tcMedTopBar">
   <div class="bm-header-inner">
+    <a href="/client/app.html#/" class="bm-logo-link">
     <div class="bm-logo-container">
-      <img class="bm-logo" src="/themes/aopa/css/tcMed/aopaLogo.png" alt="Medical Self-Assessment | A pilot's guide to flying healthy.">
-      <div class="bm-logo-text">
-        <h1>BasicMed</h1>
-        <p>Medical Self-Assessment Course</p>
-      </div>
+      
+        <img class="bm-logo" src="/client/themes/aopa/css/tcMed/aopaLogo.png" alt="Medical Self-Assessment | A pilot's guide to flying healthy.">
+        <div class="bm-logo-text">
+          <h1>BasicMed</h1>
+          <p>Medical Self-Assessment Course</p>
+        </div>
+      
     </div>
+  </a>
     <div class="bm-top-links">
-      <b><a href="##-B1">Create Account</a><a href="##-B2">Return Login</a></b>
+      <b><a href="/client/app.html#/users/signup#create">Create Account</a><a href="/client/app.html#/users/signup#login">Return Login</a></b>
     </div>
   </div>
 </div>
