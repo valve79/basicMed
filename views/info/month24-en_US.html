@@ -1,0 +1,130 @@
+<div ng-controller="info.Month24Controller as vm" class="l-wrapper tcMedContent">
+  <div ng-include="::vm.url.template('common/_page-styles-ls.html')"></div>
+  <div class="l-wrapper tcMedContent">
+    <div class="contentPanel1">
+      
+
+	<h1>Welcome Back</h1>
+<!--START Calendar Results display-->
+<h2>Your BasicMed Renewal Overview</h2>
+<!--START CMEC Exam Timeline -->
+	<p>You entered <strong>[Date ##/##/####]</strong><br>
+	(<a href="##-D-CalendarDateEnter">Enter another date</a>).</p>
+	<p>CMEC Medical Exam Due By</p>
+	<p><!--Math [Date ##/##/####] + 48-months to the last day of the month = -->Date<!--Display if 48 or less as green, more than 48 as red--></p>
+	<!--if CMEC date is 45 months or more, display the 48-month renewal page (F) instead of this 24-month one-->
+	<hr>
+	<p>Exam required every <strong>48 months</strong> to the last day of the month.</p>
+<!--END CMEC Exam Timeline -->
+
+<!--START Online Course Timeline -->
+	<p>You entered <strong>[Date ##/##/####]</strong><br>
+	(<a href="##-D-CalendarDateEnter">Enter another date</a>).</p>
+	<p>Course Completion Due By</p>
+	<p><!--Math [Date ##/##/####] + 24-months to the last day of the month = -->Date<!--Display if 24 or less as green, more than 24 as red--></p>
+	<hr>
+	<p>Course completion required every <strong>24 months</strong> to the last day of the month.</p>
+<!--END Online Course Timeline -->
+
+<!--START Warning Requirement Overdue -->
+<div class="warningBlock">
+	<p><span style="color:red"><strong>IMPORTANT:</strong></span> It looks like you may have missed the required renewal deadline per the FAA BasicMed regulations. You can confirm these dates in the <a href="https://amsrvs.registry.faa.gov/airmeninquiry/" target="_blank" alt="Find your BasicMed completion dates on the FAA’s Airman Registry">FAA’s Airman Registry</a>.</p>
+<p>The good news: There is no penalty if you are not flying as PIC. This lapse is not reported to the FAA, and you can easily regain your BasicMed privileges. Just follow the easy steps below to complete your renewal process.</p>	
+</div>
+<!--END Warning Requirement Overdue -->	
+<!--END Calendar Results display-->
+	
+<h1>24-Month Renewal</h1>
+<h2>Let’s see what you’ll need to renew or requalify for your certificate</h2>
+<p>This renewal does not require a new medical exam, but it DOES require you to re-take the BasicMed course. Follow the steps below.</p>
+<p><strong><span style="color:red">IMPORTANT:</span></strong> If you do not have your CMEC and/or completion certificate, even between renewals, <strong>YOU ARE NOT LEGAL TO FLY</strong> under BasicMed. You need them available upon FAA request.</p> 
+<p>Note, if you have completed a new CMEC exam, you must retake the online course so that you can have your updated CMEC information sent to the FAA by filling out the personal and medical information after passing the quiz.</p>
+<!--START: Eligibility Tool Callout-->
+<hr>
+	<h2>Any new health events since your last BasicMed application?</h2>
+	<p>Remember that you need to self-certify with each renewal. You can use the <a href="##-I-eligibilityTool">AOPA BasicMed Eligibility Tool</a> to help confirm your eligibility. Remember that ANY new medical events that pertain to certain cardiac, neurological, or mental health conditions will require a new special issuance from the FAA, even if you already have a special issuance for a different condition or event. </p>
+<hr>	
+<!--END: Eligibility Tool Callout-->
+<!-- START Steps -->
+<div class="steps">	
+<!--Start Step 1 24-month Get Out CMEC Form-->
+	<input type="checkbox" id="step1" name="step1" value="CMEC"><h3>Step 1: Get Out Your Most Recent CMEC Form</h3>
+		<p>With this renewal, you will need your most recent FAA Comprehensive Medical Examination Checklist (CMEC). This will most likely be from your previous BasicMed exam 24 months ago. You will submit the exam information digitally again via the form after you pass the quiz and it will be sent to the FAA digitally as part of this renewal.</p>
+	<p><a href="##-expands warning box">Can’t find your CMEC, its not with your logbook?</a></p>
+<!--START No CMEC Warning Block -->
+<div>
+<h3>You are responsible for keeping your own records.</h3>
+	<p>You must maintain these documents yourself—either in printed or electronic form—with your logbook in case the FAA requests them. If you can’t find your most recent CMEC form, you can reach out to the doctor who performed the exam and see if they have a copy. But please note, they are not required to keep a copy. Because of HIPAA regulations, neither the FAA nor AOPA have copies either.</p>
+	<p>If you cannot locate a copy your CMEC form, <span style="color:red">you must get a new BasicMed CMEC-specific exam to receive a new form</span>. The FAA requires a current CMEC and course completion certificate in order to legally fly under BasicMed, even between renewals.</p>
+</div>
+		<button type="button"><a href="https://www.faa.gov/documentLibrary/media/Form/FAA_Form_8700-2_OMB_EXP_06-2026.pdf" target="_blank" alt="FAA BasicMed CMEC Exam Form PDF">Download CMEC Form</a></button>
+		<!--START Legal Warning -->
+		<p>Be aware, you should not be tempted to enter temporary or placeholder information in the post-course CMEC form to just download your completion while you look for your CMEC. Only enter actual data from your most recent BasicMed exam preformed by a license state physician. Any information that you enter in the online form is sent directly to the FAA and is associated with your airmen record.</p>
+		<p><em>Under the Federal Aviation Regulations, anyone who makes an intentionally false statement on the CMEC may face FAA legal enforcement action, such as revocation of their FAA certificates as well as other serious penalties.</em></p>
+		<!--END Legal Warning -->
+<!--END No CMEC Warning Block -->
+<!--END Step 1 24-month Get Out CMEC Form-->
+
+<!--START Step 2 Take the Course-->
+<input type="checkbox" id="step3" name="step3" value="TakeCourse"><h3>Step 2: Take Online Course</h3>
+<p>With your FAA CMEC, including the information from your state-licensed physician, take this online course and pass the quiz. Remember to that to take the course, you’ll had to create a BasicMed specific online account to complete the course. It is not any existing accounts you may hold for AOPA.org.</p>
+<p>You must complete the post-course form (the form you fill out after you complete the quiz, where you enter your personal and doctor/exam information, from the CMEC you located in Step 1) to the FAA to earn your BasicMed completion certificate.</p>
+<p>Submission of this online form sends your information to the FAA digitally. Nothing to mail. </p>
+	<!--START Renewal Take Course button-->
+	<button type="button"><a href="##-B2-Login">Take the Course</a></button>
+	<!--END Renewal Take Course button-->
+<!--END Step 2 Take the Course-->
+
+<!--START: Step 3 Save Docs -->
+<input type="checkbox" id="step4" name="step4" value="SaveDocs"><h3>Step 3: Save Documents in Your Logbook</h3>
+<p>Once you’ve completed the course, download your course completion certificate and keep it with your completed CMEC in your logbook or electronically. You need to have it available upon request from FAA.</p>
+<!--END: Step 3 Save Docs -->
+
+<!--START: Step 4 Mark Calendar -->	
+<input type="checkbox" id="step4" name="step4" value="SaveDocs"><h3>Step 4: Mark your Calendars</h3>
+<p>Mark your calendars 24 months from your course completion date, and 48 months from your most recent CMEC completion date, to remind yourself that you will need to renew and/or requalify at those points in time. After 48 months from your CMEC exam, you will need to see your doctor <em><strong>before</strong></em> you retake the course. You can also find these dates in the <a href="https://amsrvs.registry.faa.gov/airmeninquiry/" target="_blank" alt="Find your BasicMed completion dates on the FAA’s Airman Registry">FAA’s Airman Registry</a> if you forget.</p>
+<p><span style="color:red"><strong>IMPORTANT:</strong></span> If you do not have your most recent CMEC and completion certificate, even between renewals, YOU ARE NOT LEGAL TO FLY under BasicMed. You need them available upon FAA request.</p>
+<!--END: Step 4 Mark Calendar -->
+	<!--May need new style for this blue larger copy, I just placed a span to make it stand out-->
+	<p><span style="color:#0079a4">Make sure you have a current valid driver&apos;s license, valid flight review, and you are ready to <em>fly!</em></span></p>
+</div>
+<!--END Steps-->
+	
+<!-- START FOOTER -->
+<h2>Have questions?</h2>
+	<p>Call AOPA&apos;s Pilot Information Center at <a href="tel:8884623976">(888) 462-3976)</a>, Monday through Friday, 8:30 a.m. to 6:00 p.m. EST, or email <a href="mailto:medicalassist@aopa.org?subject=BasicMed Medical Specialists Question">medicalassist@aopa.org</a>.</p>
+	<p>Need more information about BasicMed and what it means for you?<br />
+	Visit <a href="https://www.aopa.org/advocacy/pilots/medical/basicmed" target="_blank" alt="AOPA's BasicMed resources">AOPA&apos;s BasicMed resources</a>.</p>
+<!-- END FOOTER -->	
+        <!-- Footer -->
+        <div class="haveQuestions" ng-include="::vm.url.template('common/_page-bottom-have-questions.html')"></div>
+      </div>
+    <div class="contentPanel2" ng-include="::vm.url.template('common/_page-right-panel-quick-links.html')"></div>
+  </div>
+
+  <style>
+    h3 {
+      color: #2e79a6 !important;
+      font-size: 1.4em;
+      margin: 0;
+    }
+
+    .step label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      margin: 1em 0 0.3em;
+    }
+
+    .step input[type="checkbox"] {
+      width: 1.4em;
+      height: 1.4em;
+      accent-color: #0079a4;
+      min-width: 1.4em;
+    }
+
+    .steps p {
+      margin-left: 2.2em;
+    }
+  </style>

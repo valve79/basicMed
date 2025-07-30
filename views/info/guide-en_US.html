@@ -1,181 +1,495 @@
 <div ng-controller="info.GuideController as vm" class="l-wrapper tcMedContent">
-
   <div ng-include="::vm.url.template('common/_page-styles-ls.html')"></div>
   <div class="l-wrapper tcMedContent">
     <div class="contentPanel1">
       <h3>Join our BasicMed Doctor Finder Listings</h3>
-<p>If you are a state licensed physician and would like to be added to our BasicMed Doctor database</p>
-<p style="text-align: center;">
-<a class="button btn btn-register-link" style="padding: 13px 35px !important; margin: 0 !important; font-size: 0.9em;" href="https://www.aopa.org/advocacy/pilots/medical/basicmed/basicmed-doctor-consent" target="_blank" alt="Join the AOPA's BasicMed Doctor Database">Join Doctor Database</a></p>
+      <p>
+        If you are a state licensed physician and would like to be added to our
+        BasicMed Doctor database
+      </p>
+      <p style="text-align: center">
+        <a
+          class="button btn btn-register-link"
+          style="
+            padding: 13px 35px !important;
+            margin: 0 !important;
+            font-size: 0.9em;
+          "
+          href="https://www.aopa.org/advocacy/pilots/medical/basicmed/basicmed-doctor-consent"
+          target="_blank"
+          alt="Join the AOPA's BasicMed Doctor Database"
+          >Join Doctor Database</a
+        >
+      </p>
 
-<!--END Call out to Join Doctor Find-->
+      <!--END Call out to Join Doctor Find-->
 
-<!--START Copy -->
-<h1>Physicians Guide to BasicMed</h1>
-<h2>Understanding BasicMed</h2>
-<p>Your patient is asking you to perform a medical exam following a simple checklist that the FAA has specifically created to be completed by any state-licensed physician. If this is the first time a pilot has asked you to complete this checklist, that&rsquo;s because it&rsquo;s part of the FAA&rsquo;s medical rules that allow a private pilot flying certain small aircraft for non-commercial purposes to obtain a medical examination from any state-licensed physician.</p>
-<p>The examination needed to complete this checklist is just like a wellness exam, similar to those conducted for athletics or scuba diving certification. Conducting this examination is similar to determining if an individual can safely operate a car, truck, motorcycle, boat or other motor vehicle. Ultimately your patient is responsible for self-certifying his or her ability to operate a motor vehicle, in this case a small aircraft, prior to every flight.</p>
-<p style="text-align: center;">
-<a class="button btn btn-register-link" style="padding: 13px 35px !important; margin: 0 !important; font-size: 0.9em;" href="https://www.aopa.org/-/media/files/aopa/home/advocacy/pilots/medical/basicmed-pilot-and-physicians-guide_final.pdf">Download AOPA's BasicMed Pilot & Physician's Guide</a>
-</p>
-<!--START Qualified-->
-<h3>Am I qualified to perform a BasicMed exam?</h3>
-<p>All state-licensed physicians are qualified to perform a BasicMed exam. Advanced practice providers, such nurse practitioners, may assist with the exam but only a state-licensed physician may make the final affirmation on the checklist.</p>
-<!--END Qualified-->
+      <!--START Copy -->
+      <h1>Physicians Guide to BasicMed</h1>
+      <h2>Understanding BasicMed</h2>
+      <p>
+        Your patient is asking you to perform a medical exam following a simple
+        checklist that the FAA has specifically created to be completed by any
+        state-licensed physician. If this is the first time a pilot has asked
+        you to complete this checklist, that&rsquo;s because it&rsquo;s part of
+        the FAA&rsquo;s medical rules that allow a private pilot flying certain
+        small aircraft for non-commercial purposes to obtain a medical
+        examination from any state-licensed physician.
+      </p>
+      <p>
+        The examination needed to complete this checklist is just like a
+        wellness exam, similar to those conducted for athletics or scuba diving
+        certification. Conducting this examination is similar to determining if
+        an individual can safely operate a car, truck, motorcycle, boat or other
+        motor vehicle. Ultimately your patient is responsible for
+        self-certifying his or her ability to operate a motor vehicle, in this
+        case a small aircraft, prior to every flight.
+      </p>
+      <p style="text-align: center">
+        <a
+          class="button btn btn-register-link"
+          style="
+            padding: 13px 35px !important;
+            margin: 0 !important;
+            font-size: 0.9em;
+          "
+          href="https://www.aopa.org/-/media/files/aopa/home/advocacy/pilots/medical/basicmed-pilot-and-physicians-guide_final.pdf"
+          >Download AOPA's BasicMed Pilot & Physician's Guide</a
+        >
+      </p>
+      <!--START Qualified-->
+      <h3>Am I qualified to perform a BasicMed exam?</h3>
+      <p>
+        All state-licensed physicians are qualified to perform a BasicMed exam.
+        Advanced practice providers, such nurse practitioners, may assist with
+        the exam but only a state-licensed physician may make the final
+        affirmation on the checklist.
+      </p>
+      <!--END Qualified-->
 
-<!--START Purpose -->
-<h3>What is the purpose of a BasicMed exam?</h3>
-<p>The exam is used to discuss with the individual if any medications he or she is taking could interfere with his or her ability to safely operate a motor vehicle or aircraft and perform an exam of each of the items on the checklist. Based upon this discussion and exam, you as the physician then determine whether, in your medical opinion, you are aware of any medical condition that, as presently treated, could interfere with the individual&rsquo;s ability to safely operate an aircraft. It is like assessing if an individual can safely operate a motor vehicle such as a car, truck, motorcycle, or boat.</p>
-<!--END Purpose -->
+      <!--START Purpose -->
+      <h3>What is the purpose of a BasicMed exam?</h3>
+      <p>
+        The exam is used to discuss with the individual if any medications he or
+        she is taking could interfere with his or her ability to safely operate
+        a motor vehicle or aircraft and perform an exam of each of the items on
+        the checklist. Based upon this discussion and exam, you as the physician
+        then determine whether, in your medical opinion, you are aware of any
+        medical condition that, as presently treated, could interfere with the
+        individual&rsquo;s ability to safely operate an aircraft. It is like
+        assessing if an individual can safely operate a motor vehicle such as a
+        car, truck, motorcycle, or boat.
+      </p>
+      <!--END Purpose -->
 
-<!--START Exam Guide-->
-<h3>How do I perform a BasicMed exam?</h3>
-<p>A BasicMed examination is like many other physical or wellness examinations that physicians perform daily.</p>
-<!-- START Steps -->
-<div class="steps">
-<!--Start Step 1 CMEC Form-->
-  <!-- Step 1 -->
-  <div class="step">
-    <label for="DocStep1">
+      <!--START Exam Guide-->
+      <h3>How do I perform a BasicMed exam?</h3>
+      <p>
+        A BasicMed examination is like many other physical or wellness
+        examinations that physicians perform daily.
+      </p>
+      <!-- START Steps -->
+      <div class="steps">
+        <!--Start Step 1 CMEC Form-->
+        <!-- Step 1 -->
+        <div class="step">
+          <label for="DocStep1">
+            <span>Step 1: The BasicMed CMEC Form</span>
+          </label>
+          <p>
+            Your patient will arrive at your office having completed the
+            “individual information” portion of the FAA’s Comprehensive Medical
+            Exam Checklist. This assessment will capture the patient’s personal
+            information and his/her medical history. It is intended to
+            facilitate your examination as well as increase the pilot’s
+            self-awareness of any medical conditions that may impact his/her
+            ability to safely operate a small recreational aircraft. Note that
+            before every flight, FAA regulations require pilots to assess if
+            they are feeling well enough to safely operate an aircraft. The
+            regulations state that the final go/no-go decision belongs to the
+            pilot in command of the aircraft.
+          </p>
+        </div>
+        <!--END Step 1 CMEC Form-->
 
-      <span>Step 1: The BasicMed CMEC Form</span>
-    </label>
-    <p>Your patient will arrive at your office having completed the “individual information” portion of the FAA’s Comprehensive Medical Exam Checklist. This assessment will capture the patient’s personal information and his/her medical history. It is intended to facilitate your examination as well as increase the pilot’s self-awareness of any medical conditions that may impact his/her ability to safely operate a small recreational aircraft. Note that before every flight, FAA regulations require pilots to assess if they are feeling well enough to safely operate an aircraft. The regulations state that the final go/no-go decision belongs to the pilot in command of the aircraft.</p>
-  </div>
-<!--END Step 1 CMEC Form-->
+        <!--START Step 2 The Exam-->
+        <!-- Step 2 -->
+        <div class="step">
+          <label for="DocStep2">
+            <span>Step 2: Perform the Exam</span>
+          </label>
+          <p>
+            After reviewing and discussing the aeromedical self-assessment, you
+            will perform the physical examination as indicated in Section 3 of
+            the FAA checklist.
+          </p>
+        </div>
+        <!--END Step 2 The Exam-->
 
-<!--START Step 2 The Exam-->
-  <!-- Step 2 -->
-  <div class="step">
-    <label for="DocStep2">
+        <!--START Step 3 Evaluate-->
+        <!-- Step 3 -->
+        <div class="step">
+          <label for="DocStep3">
+            <span>Step 3: Evaluate</span>
+          </label>
+          <p>
+            If your clinical judgment after completing the examination and
+            discussing the patient’s medical history is that you are not aware
+            of any medical condition that, as presently treated, could interfere
+            with the individual’s ability to safely operate an aircraft, you
+            will complete Section 3 of the FAA examination form and return it to
+            the patient. No further action is required of you – you have no
+            responsibility to report to the FAA (digitally or via mail), and the
+            pilot is responsible for maintaining all records.
+          </p>
+        </div>
+        <!--END Step 3 Evaluate-->
 
-      <span>Step 2: Perform the Exam</span>
-    </label>
-    <p>After reviewing and discussing the aeromedical self-assessment, you will perform the physical examination as indicated in Section 3 of the FAA checklist.</p>
-  </div>
-<!--END Step 2 The Exam-->
+        <!--START Step 4 Develop A Plan-->
+        <!-- Step 4 -->
+        <div class="step">
+          <label for="DocStep4">
+            <span>Step 4: Develop A Plan</span>
+          </label>
+          <p>
+            If, in your medical opinion, after completing the examination, you
+            are aware of anything that could interfere with the safe operation
+            of a motor vehicle, in this case a small aircraft, you are
+            encouraged to work with the patient to develop an appropriate
+            treatment regimen. As the examining physician, you exercise medical
+            discretion to address, as medically appropriate, any medical
+            conditions identified, and to exercise medical discretion in
+            determining whether any medical tests are warranted as part of the
+            exam. Following treatment, you may complete Section 3 of the FAA
+            examination form and return it to the patient. No further action is
+            required of you – you have no responsibility to report to the FAA
+            (digitally or via mail), and the pilot is responsible for
+            maintaining all records.
+          </p>
+        </div>
+        <!--END Step 4 Develop A Plan-->
 
-<!--START Step 3 Evaluate-->
-  <!-- Step 3 -->
-  <div class="step">
-    <label for="DocStep3">
+        <h3>
+          Is it the responsibility of the pilot to determine whether her or she
+          is eligible to take the steps necessary to become qualified under
+          BasicMed, such as having the FAA&rsquo;s exam checklist completed by a
+          state-licensed physician?
+        </h3>
+        <p>
+          Yes, it is the responsibility of the pilots to understand and comply
+          with the eligibility requirements for BasicMed, including an FAA
+          medical certificate held any time on or after July 15, 2006; most
+          recent FAA medical certificate not withdrawn, suspended at any time,
+          or revoked; most recent authorization for special issuance not
+          withdrawn or medical application denied; and currently hold a valid
+          U.S. driver&rsquo;s license and comply with any and all of its
+          restrictions.
+        </p>
+        <!--END Exam Guide-->
 
-      <span>Step 3: Evaluate</span>
-    </label>
-    <p>If your clinical judgment after completing the examination and discussing the patient’s medical history is that you are not aware of any medical condition that, as presently treated, could interfere with the individual’s ability to safely operate an aircraft, you will complete Section 3 of the FAA examination form and return it to the patient. No further action is required of you – you have no responsibility to report to the FAA (digitally or via mail), and the pilot is responsible for maintaining all records.</p>
-  </div>
-<!--END Step 3 Evaluate-->
-	
-<!--START Step 4 Develop A Plan-->
-  <!-- Step 4 -->
-  <div class="step">
-    <label for="DocStep4">
- 
-      <span>Step 4: Develop A Plan</span>
-    </label>
-    <p>If, in your medical opinion, after completing the examination, you are aware of anything that could interfere with the safe operation of a motor vehicle, in this case a small aircraft, you are encouraged to work with the patient to develop an appropriate treatment regimen. As the examining physician, you exercise medical discretion to address, as medically appropriate, any medical conditions identified, and to exercise medical discretion in determining whether any medical tests are warranted as part of the exam. Following treatment, you may complete Section 3 of the FAA examination form and return it to the patient. No further action is required of you – you have no responsibility to report to the FAA (digitally or via mail), and the pilot is responsible for maintaining all records.</p>
-  </div>
-<!--END Step 4 Develop A Plan-->
+        <h3>What should I be concerned about during the examination?</h3>
+        <p>
+          Persons who have a medical history of, or are diagnosed with, the
+          conditions described below as identified by the FAA, may not use
+          BasicMed until they have been seen by an FAA Aviation Medical Examiner
+          (AME) and have been granted a special issuance medical certificate by
+          the FAA. If they previously held a special issuance medical
+          certificate for any condition below, it must have been valid within
+          the ten years prior to July 15, 2016 for the pilot to be eligible for
+          BasicMed. In other words, if your patient has any of the conditions
+          below, and they were not previously granted a special issuance medical
+          certificate for that condition by the FAA within the allowed
+          timeframe, you should advise them to contact AOPA&rsquo;s Pilot
+          Information Center about seeing an AME.
+        </p>
+        <!---- BEGIN CONDITIONS --->
+        <p>
+          <strong
+            >Conditions Requiring an FAA Authorization for Special Issuance of a
+            Medical Certificate:</strong
+          >
+        </p>
+        <p>
+          <strong
+            >I. Mental Health Disorders&mdash;A mental health disorder, limited
+            to an established medical history or clinical diagnosis of any of
+            the following:</strong
+          >
+        </p>
+        <ul>
+          <li>
+            Personality disorder that is severe enough to have repeatedly
+            manifested itself by overt acts.
+          </li>
+          <li>
+            Psychosis, defined as a case in which an individual:
+            <ul>
+              <li>
+                Has manifested delusions, hallucinations, grossly bizarre or
+                disorganized behavior, or other commonly accepted symptoms of
+                psychosis; or
+              </li>
+              <li>
+                May reasonably be expected to manifest delusions,
+                hallucinations, grossly bizarre or disorganized behavior, or
+                other commonly accepted symptoms of psychosis.
+              </li>
+            </ul>
+          </li>
+          <li>Bipolar disorder.</li>
+          <li>
+            Substance dependence within the previous two years, as defined in
+            <a
+              href="https://www.ecfr.gov/cgi-bin/text-idx?node=se14.2.67_1307&amp;rgn=div8"
+              target="_blank"
+              >14 C.F.R. &sect; 67.307(a)(4)</a
+            >.
+          </li>
+        </ul>
+        <p>
+          Furthermore, an individual with a clinically diagnosed mental health
+          condition is prohibited from exercising BasicMed privileges if, in the
+          judgment of the individual&rsquo;s state-licensed physician, the
+          condition:
+        </p>
+        <ul>
+          <li>
+            Renders the individual unable to safely perform the duties of or
+            exercise the privileges of a pilot in command of a small aircraft
+            under the FAA&rsquo;s new medical rules;
+          </li>
+          <li>
+            May reasonably be expected to make the individual unable to safely
+            perform the duties of or exercise the privileges of a pilot in
+            command of a small aircraft under the FAA&rsquo;s new medical rules;
+            or
+          </li>
+          <li>
+            If the individual&rsquo;s driver&rsquo;s license is revoked by the
+            issuing agency as a result of a clinically diagnosed mental health
+            condition.
+          </li>
+        </ul>
+        <p>
+          <strong
+            >II. Neurological Disorders&mdash;A neurological disorder, limited
+            to an established medical history or clinical diagnosis of any of
+            the following:</strong
+          >
+        </p>
+        <ul>
+          <li>Epilepsy.</li>
+          <li>
+            Disturbance of consciousness without satisfactory medical
+            explanation of the cause.
+          </li>
+          <li>
+            A transient loss of control of nervous system functions without
+            satisfactory medical explanation of the cause.
+          </li>
+        </ul>
+        <p>
+          Furthermore, an individual with a clinically diagnosed neurological
+          condition is prohibited from exercising BasicMed privileges if, in the
+          judgment of the individual&rsquo;s state-licensed physician, the
+          condition:
+        </p>
+        <ul>
+          <li>
+            Renders the individual unable to safely perform the duties of or
+            exercise the privileges of a pilot in command of a small aircraft
+            under the FAA&rsquo;s new medical rules; or
+          </li>
+          <li>
+            May reasonably be expected to make the individual unable to safely
+            perform the duties of or exercise the privileges of a pilot in
+            command of a small aircraft under the FAA&rsquo;s new medical rules;
+            or
+          </li>
+          <li>
+            If the individual&rsquo;s driver&rsquo;s license is revoked by the
+            issuing agency as a result of a clinically diagnosed neurological
+            condition.
+          </li>
+        </ul>
+        <p>
+          <strong
+            >III. Cardiovascular Conditions&mdash;A cardiovascular condition,
+            limited to a one-time special issuance for each diagnosis of the
+            following:</strong
+          >
+        </p>
+        <ul>
+          <li>Myocardial infarction (heart attack).</li>
+          <li>
+            Coronary heart disease that has required treatment (stent, bypass,
+            angioplasty).
+          </li>
+          <li>Cardiac valve replacement.</li>
+          <li>Heart replacement.</li>
+        </ul>
+        <p>
+          Review the FAA website for
+          <a
+            href="https://www.faa.gov/about/office_org/headquarters_offices/avs/offices/aam/ame/guide/app_process/general/appeals/authorization/"
+            target="_blank"
+            alt="FAA full setails on conditions that require special issuances"
+            ><strong
+              >full details on conditions that require special issuance</strong
+            ></a
+          >.
+        </p>
+        <p>
+          Call AOPA&apos;s Pilot Information Center at
+          <a href="tel:8008722672">(800)872-2672</a>, Monday through Friday,
+          8:30 a.m. to 6:00 p.m. EST, or email
+          <a
+            href="mailto:medicalassist@aopa.org?subject=Special Issuances Requirements for BasicMed"
+            >medicalassist@aopa.org</a
+          >. Please identify yourself as someone looking for assistance with
+          special issuances requirements for BasicMed.
+        </p>
+        <!-- END CONDITIONS-->
+        <p>
+          Pilots requiring a special issuance medical certificate should contact
+          the Aircraft Owners and Pilots Association for more information about
+          seeing an AME.
+        </p>
+        <h3>Medication</h3>
+        <p>
+          When a pilot visits his or her physician for the BasicMed examination,
+          the pilot information and medical history portion of medical exam
+          checklist completed by the pilot will list any prescription or
+          non-prescription medication that the pilot currently uses, as well as
+          information such as the medication name and dosage. The physician will
+          then address, as medically appropriate, any medications the individual
+          is taking and discuss the medication&rsquo;s potential to interfere
+          with the safe operation of an aircraft or motor vehicle. While there
+          is no list of specific medications that are prohibited for pilots
+          flying under BasicMed rules, certain medications are not safe to be
+          used at all while flying and others require a reasonable waiting
+          period after use. Physicians should be mindful of prescription and
+          over-the-counter drugs that may impact the safe operation of a motor
+          vehicle, in this case a private recreational aircraft. This can
+          include, but is not necessarily limited to, the use of sedatives,
+          psychotropic drugs, antihistamines, narcotics or any other medication
+          that can impair cognition if used while the pilot is operating an
+          aircraft.
+        </p>
+        <p>
+          Pilots, in discussion with their physician, should consult available
+          aeromedical resources to understand potential flight hazards
+          associated with any medications being taken, such as whether the
+          underlying condition the medication is being taken for makes flight
+          unsafe, or to understand side-effects that may be unnoticeable before
+          flight but could impair the ability of a pilot to make sound
+          decisions. In addition to the BasicMed rules, pilots taking medication
+          must also comply with existing Federal Aviation Regulations, such as
+          the self-grounding requirements of FAR 61.53 and FAR 91.17&rsquo;s
+          prohibition on operations while using any drug that has affects
+          contrary to safety. AOPA&rsquo;s online medical education course will
+          include medication considerations when evaluating you fitness to fly.
+          The final go/no-go decision is made by the pilot.
+        </p>
+        <h3>Why must pilots not use the FAA&rsquo;s MedXPress system?</h3>
+        <p>
+          The FAA&rsquo;s MedXPress system is only for completing an application
+          for an FAA First, Second, or Third Class medical certificate. If the
+          pilot is pursuing BasicMed qualifications, they must download and
+          complete the pilot portion of the Comprehensive Medical Examination
+          Checklist before visiting the doctor.
+        </p>
+        <ul>
+          <li>
+            <strong>The AOPA BasicMed Pilot and Physician Guide:</strong>
+            <a
+              href="https://basicmedicalcourse.aopa.org/pub/bundles/course_61001/downloads/AOPABasicMed_Pilot_and_Physicians_Guide.pdf"
+              target="_blank"
+              alt="AOPA BasicMed Pilot and Physician Guide PDF"
+              >https://basicmedicalcourse.aopa.org/pub/bundles/course_61001/downloads/AOPABasicMed_Pilot_and_Physicians_Guide.pdf</a
+            >
+          </li>
+          <li>
+            <strong
+              >The FAA Comprehensive Medical Examination Checklist
+              (CMEC):</strong
+            >
+            <a
+              href="https://www.faa.gov/documentLibrary/media/Form/FAA_Form_8700-2_OMB_EXP_06-2026.pdf"
+              target="_blank"
+              alt="FAA BasicMed CMEC Form PDF"
+              >https://www.faa.gov/documentLibrary/media/Form/FAA_Form_8700-2_OMB_EXP_06-2026.pdf</a
+            >
+          </li>
+        </ul>
+        <h3>Questions?</h3>
+        <p>
+          If you have any further questions, contact the AOPA Pilot Information
+          Center by calling (888) 462-3976 Monday through Friday, 8:30 a.m. to
+          6:00 p.m., Eastern Time or email at
+          <a
+            href="mailto:pilotassist@aopa.org?subject=BasicMed%20Physican%20Exam%20Assistance"
+            target="_top"
+            >pilotassist@aopa.org</a
+          >. Please identify yourself as a physician interested in performing
+          the BasicMed exam.
+        </p>
+        <div class="sidebar">
+          <h3>Join our BasicMed Doctor Finder Listings</h3>
+          <p>
+            If you are a state licensed physician and would like to be added to
+            our BasicMed Doctor database click the button below.
+          </p>
+          <a
+            class="button btn btn-register-link"
+            style="
+              padding: 13px 35px !important;
+              margin: 0 !important;
+              font-size: 0.9em;
+            "
+            href="https://www.aopa.org/advocacy/pilots/medical/basicmed/basicmed-doctor-consent"
+            target="_blank"
+            >Join the BasicMed Doctor Database</a
+          >
+        </div>
 
-<h3>Is it the responsibility of the pilot to determine whether her or she is eligible to take the steps necessary to become qualified under BasicMed, such as having the FAA&rsquo;s exam checklist completed by a state-licensed physician?</h3>
-<p>Yes, it is the responsibility of the pilots to understand and comply with the eligibility requirements for BasicMed, including an FAA medical certificate held any time on or after July 15, 2006; most recent FAA medical certificate not withdrawn, suspended at any time, or revoked; most recent authorization for special issuance not withdrawn or medical application denied; and currently hold a valid U.S. driver&rsquo;s license and comply with any and all of its restrictions.</p>
-<!--END Exam Guide-->
-
-	
-<h3>What should I be concerned about during the examination?</h3>
-<p>Persons who have a medical history of, or are diagnosed with, the conditions described below as identified by the FAA, may not use BasicMed until they have been seen by an FAA Aviation Medical Examiner (AME) and have been granted a special issuance medical certificate by the FAA. If they previously held a special issuance medical certificate for any condition below, it must have been valid within the ten years prior to July 15, 2016 for the pilot to be eligible for BasicMed. In other words, if your patient has any of the conditions below, and they were not previously granted a special issuance medical certificate for that condition by the FAA within the allowed timeframe, you should advise them to contact AOPA&rsquo;s Pilot Information Center about seeing an AME.</p>
-<!---- BEGIN CONDITIONS --->
-<p><strong>Conditions Requiring an FAA Authorization for Special Issuance of a Medical Certificate:</strong></p>
-<p><strong>I. Mental Health Disorders&mdash;A mental health disorder, limited to an established medical history or clinical diagnosis of any of the following:</strong></p>
-<ul>
-    <li>Personality disorder that is severe enough to have repeatedly manifested itself by overt acts.</li>
-    <li>Psychosis, defined as a case in which an individual:
-    <ul>
-        <li>Has manifested delusions, hallucinations, grossly bizarre or disorganized behavior, or other commonly accepted symptoms of psychosis; or</li>
-        <li>May reasonably be expected to manifest delusions, hallucinations, grossly bizarre or disorganized behavior, or other commonly accepted symptoms of psychosis.</li>
-    </ul>
-    </li>
-    <li>Bipolar disorder.</li>
-    <li>Substance dependence within the previous two years, as defined in <a href="https://www.ecfr.gov/cgi-bin/text-idx?node=se14.2.67_1307&amp;rgn=div8" target="_blank">14 C.F.R. &sect; 67.307(a)(4)</a>.</li>
-</ul>
-<p>Furthermore, an individual with a clinically diagnosed mental health condition is prohibited from exercising BasicMed privileges if, in the judgment of the individual&rsquo;s state-licensed physician, the condition:</p>
-<ul>
-    <li>Renders the individual unable to safely perform the duties of or exercise the privileges of a pilot in command of a small aircraft under the FAA&rsquo;s new medical rules;</li>
-    <li>May reasonably be expected to make the individual unable to safely perform the duties of or exercise the privileges of a pilot in command of a small aircraft under the FAA&rsquo;s new medical rules; or</li>
-    <li>If the individual&rsquo;s driver&rsquo;s license is revoked by the issuing agency as a result of a clinically diagnosed mental health condition.</li>
-</ul>
-<p><strong>II. Neurological Disorders&mdash;A neurological disorder, limited to an established medical history or clinical diagnosis of any of the following:</strong></p>
-<ul>
-    <li>Epilepsy.</li>
-    <li>Disturbance of consciousness without satisfactory medical explanation of the cause.</li>
-    <li>A transient loss of control of nervous system functions without satisfactory medical explanation of the cause.</li>
-</ul>
-<p>Furthermore, an individual with a clinically diagnosed neurological condition is prohibited from exercising BasicMed privileges if, in the judgment of the individual&rsquo;s state-licensed physician, the condition:</p>
-<ul>
-    <li>Renders the individual unable to safely perform the duties of or exercise the privileges of a pilot in command of a small aircraft under the FAA&rsquo;s new medical rules; or</li>
-    <li>May reasonably be expected to make the individual unable to safely perform the duties of or exercise the privileges of a pilot in command of a small aircraft under the FAA&rsquo;s new medical rules; or</li>
-    <li>If the individual&rsquo;s driver&rsquo;s license is revoked by the issuing agency as a result of a clinically diagnosed neurological condition.</li>
-</ul>
-<p><strong>III. Cardiovascular Conditions&mdash;A cardiovascular condition, limited to a one-time special issuance for each diagnosis of the following:</strong></p>
-<ul>
-    <li>Myocardial infarction (heart attack).</li>
-    <li>Coronary heart disease that has required treatment (stent, bypass, angioplasty).</li>
-    <li>Cardiac valve replacement.</li>
-    <li>Heart replacement.</li>
-</ul>
-<p>Review the FAA website for <a href="https://www.faa.gov/about/office_org/headquarters_offices/avs/offices/aam/ame/guide/app_process/general/appeals/authorization/" target="_blank" alt="FAA full setails on conditions that require special issuances"><strong>full details on conditions that require special issuance</strong></a>.</p>
-<p>Call AOPA&apos;s Pilot Information Center at <a href="tel:8008722672">(800)872-2672</a>, Monday through Friday, 8:30 a.m. to 6:00 p.m. EST, or email <a href="mailto:medicalassist@aopa.org?subject=Special Issuances Requirements for BasicMed">medicalassist@aopa.org</a>. Please identify yourself as someone looking for assistance with special issuances requirements for BasicMed. </p>
-<!-- END CONDITIONS-->
-<p>Pilots requiring a special issuance medical certificate should contact the Aircraft Owners and Pilots Association for more information about seeing an AME.</p>
-<h3>Medication</h3>
-<p>When a pilot visits his or her physician for the BasicMed examination, the pilot information and medical history portion of medical exam checklist completed by the pilot will list any prescription or non-prescription medication that the pilot currently uses, as well as information such as the medication name and dosage. The physician will then address, as medically appropriate, any medications the individual is taking and discuss the medication&rsquo;s potential to interfere with the safe operation of an aircraft or motor vehicle. While there is no list of specific medications that are prohibited for pilots flying under BasicMed rules, certain medications are not safe to be used at all while flying and others require a reasonable waiting period after use. Physicians should be mindful of prescription and over-the-counter drugs that may impact the safe operation of a motor vehicle, in this case a private recreational aircraft. This can include, but is not necessarily limited to, the use of sedatives, psychotropic drugs, antihistamines, narcotics or any other medication that can impair cognition if used while the pilot is operating an aircraft.</p>
-<p>Pilots, in discussion with their physician, should consult available aeromedical resources to understand potential flight hazards associated with any medications being taken, such as whether the underlying condition the medication is being taken for makes flight unsafe, or to understand side-effects that may be unnoticeable before flight but could impair the ability of a pilot to make sound decisions. In addition to the BasicMed rules, pilots taking medication must also comply with existing Federal Aviation Regulations, such as the self-grounding requirements of FAR 61.53 and FAR 91.17&rsquo;s prohibition on operations while using any drug that has affects contrary to safety. AOPA&rsquo;s online medical education course will include medication considerations when evaluating you fitness to fly. The final go/no-go decision is made by the pilot.</p>
-<h3>Why must pilots not use the FAA&rsquo;s MedXPress system?</h3>
-<p>The FAA&rsquo;s MedXPress system is only for completing an application for an FAA First, Second, or Third Class medical certificate. If the pilot is pursuing BasicMed qualifications, they must download and complete the pilot portion of the Comprehensive Medical Examination Checklist before visiting the doctor.</p>
-<ul>
-    <li><strong>The AOPA BasicMed Pilot and Physician Guide:</strong> <a href="https://basicmedicalcourse.aopa.org/pub/bundles/course_61001/downloads/AOPABasicMed_Pilot_and_Physicians_Guide.pdf" target="_blank" alt="AOPA BasicMed Pilot and Physician Guide PDF">https://basicmedicalcourse.aopa.org/pub/bundles/course_61001/downloads/AOPABasicMed_Pilot_and_Physicians_Guide.pdf</a></li>
-    <li><strong>The FAA Comprehensive Medical Examination Checklist (CMEC):</strong> <a href="https://www.faa.gov/documentLibrary/media/Form/FAA_Form_8700-2_OMB_EXP_06-2026.pdf" target="_blank" alt="FAA BasicMed CMEC Form PDF">https://www.faa.gov/documentLibrary/media/Form/FAA_Form_8700-2_OMB_EXP_06-2026.pdf</a></li>
-</ul>
-<h3>Questions?</h3>
-<p>If you have any further questions, contact the AOPA Pilot Information Center by calling (888) 462-3976 Monday through Friday, 8:30 a.m. to 6:00 p.m., Eastern Time or email at <a href="mailto:pilotassist@aopa.org?subject=BasicMed%20Physican%20Exam%20Assistance" target="_top">pilotassist@aopa.org</a>. Please identify yourself as a physician interested in performing the BasicMed exam.</p>
-<div class="sidebar">
-<h3>Join our BasicMed Doctor Finder Listings</h3>
-<p>If you are a state licensed physician and would like to be added to our BasicMed Doctor database click the button below. </p>
-<a class="button btn btn-register-link" style="padding: 13px 35px !important; margin: 0 !important; font-size: 0.9em;" href="https://www.aopa.org/advocacy/pilots/medical/basicmed/basicmed-doctor-consent" target="_blank">Join the BasicMed Doctor Database</a>
-</div>
-
-      <!-- Footer -->
-      <div class="haveQuestions" ng-include="::vm.url.template('common/_page-bottom-have-questions.html')"></div>
+        <!-- Footer -->
+        <div
+          class="haveQuestions"
+          ng-include="::vm.url.template('common/_page-bottom-have-questions.html')"
+        ></div>
+      </div>
     </div>
-
-    
+    <div
+      class="contentPanel2"
+      ng-include="::vm.url.template('common/_page-right-panel-quick-links.html')"
+    ></div>
   </div>
-  <div class="contentPanel2" ng-include="::vm.url.template('common/_page-right-panel-quick-links.html')"></div>
+
+  <style>
+    h3 {
+      color: #2e79a6 !important;
+      font-size: 1.4em;
+      margin: 0;
+    }
+
+    .step label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      margin: 1em 0 0.3em;
+    }
+
+    .step input[type="checkbox"] {
+      width: 1.4em;
+      height: 1.4em;
+      accent-color: #0079a4;
+      min-width: 1.4em;
+    }
+
+    .steps p {
+      margin-left: 2.2em;
+    }
+  </style>
 </div>
-
-<style>
-  h3 {
-    color: #2e79a6 !important;
-    font-size: 1.4em;
-    margin: 0;
-  }
-
-  .step label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    margin: 1em 0 0.3em;
-  }
-
-  .step input[type="checkbox"] {
-    width: 1.4em;
-    height: 1.4em;
-    accent-color: #0079a4;
-    min-width: 1.4em;
-  }
-
-  .steps p {
-    margin-left: 2.2em;
-  }
-</style>

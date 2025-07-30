@@ -2743,6 +2743,18 @@ require = (function e(t, r, i) {
             .when(q.InfoRouter.eligibilityRoute, {
               templateUrl: s.template("info/eligibility.html"),
             })
+            .when(q.InfoRouter.month24Route, {
+              templateUrl: s.template("info/month24.html"),
+            })
+            .when(q.InfoRouter.month48Route, {
+              templateUrl: s.template("info/month48.html"),
+            })
+            .when(q.InfoRouter.faaissuedRoute, {
+              templateUrl: s.template("info/faaissued.html"),
+            })
+            .when(q.InfoRouter.specialRoute, {
+              templateUrl: s.template("info/special.html"),
+            })            
             .when(q.InfoRouter.guideRoute, {
               templateUrl: s.template("info/guide.html"),
             })
@@ -15098,6 +15110,122 @@ require = (function e(t, r, i) {
     "./../utils/PageHeaderHelper": 231,
   },
 ],
+1105: [
+  function (e, t, r) {
+    var i = e("./../utils/MenuHelper"),
+        s = e("./../utils/PageHeaderHelper"),
+        o = e("../utils/UrlService"),
+        n = (function () {
+          function e(e, t) {
+            this.$location = e;
+            this.url = t;
+
+            i.MenuHelper.setCurrentMenuItem(i.MenuHelper.MONTH24_MENU_KEY);
+            s.PageHeader.set().header("24 Month Renew").update();
+          }
+
+          return (
+            e.NAME = "info.Month24Controller",
+            e.$inject = ["$location", o.UrlService.NAME],
+            e
+          );
+        })();
+
+    r.Month24Controller = n;
+  },
+  {
+    "../utils/UrlService": 236,
+    "./../utils/MenuHelper": 227,
+    "./../utils/PageHeaderHelper": 231,
+  },
+],
+1106: [
+  function (e, t, r) {
+    var i = e("./../utils/MenuHelper"),
+        s = e("./../utils/PageHeaderHelper"),
+        o = e("../utils/UrlService"),
+        n = (function () {
+          function e(e, t) {
+            this.$location = e;
+            this.url = t;
+
+            i.MenuHelper.setCurrentMenuItem(i.MenuHelper.MONTH48_MENU_KEY);
+            s.PageHeader.set().header("48 Month Renew").update();
+          }
+
+          return (
+            e.NAME = "info.Month48Controller",
+            e.$inject = ["$location", o.UrlService.NAME],
+            e
+          );
+        })();
+
+    r.Month48Controller = n;
+  },
+  {
+    "../utils/UrlService": 236,
+    "./../utils/MenuHelper": 227,
+    "./../utils/PageHeaderHelper": 231,
+  },
+],
+1107: [
+  function (e, t, r) {
+    var i = e("./../utils/MenuHelper"),
+        s = e("./../utils/PageHeaderHelper"),
+        o = e("../utils/UrlService"),
+        n = (function () {
+          function e(e, t) {
+            this.$location = e;
+            this.url = t;
+
+            i.MenuHelper.setCurrentMenuItem(i.MenuHelper.FAAISSUED_MENU_KEY);
+            s.PageHeader.set().header("FAA Issued Medical Required").update();
+          }
+
+          return (
+            e.NAME = "info.FaaissuedController",
+            e.$inject = ["$location", o.UrlService.NAME],
+            e
+          );
+        })();
+
+    r.FaaissuedController = n;
+  },
+  {
+    "../utils/UrlService": 236,
+    "./../utils/MenuHelper": 227,
+    "./../utils/PageHeaderHelper": 231,
+  },
+],
+1108: [
+  function (e, t, r) {
+    var i = e("./../utils/MenuHelper"),
+        s = e("./../utils/PageHeaderHelper"),
+        o = e("../utils/UrlService"),
+        n = (function () {
+          function e(e, t) {
+            this.$location = e;
+            this.url = t;
+
+            i.MenuHelper.setCurrentMenuItem(i.MenuHelper.SPECIAL_MENU_KEY);
+            s.PageHeader.set().header("Special Issuance Required").update();
+          }
+
+          return (
+            e.NAME = "info.SpecialController",
+            e.$inject = ["$location", o.UrlService.NAME],
+            e
+          );
+        })();
+
+    r.SpecialController = n;
+  },
+  {
+    "../utils/UrlService": 236,
+    "./../utils/MenuHelper": 227,
+    "./../utils/PageHeaderHelper": 231,
+  },
+],
     102: [
       function (e, t, r) {
         var i = e("./AboutProjectController"),
@@ -15106,6 +15234,10 @@ require = (function e(t, r, i) {
           n = e("./ContactsController"),
           z = e("./RenewalController"),
           y = e("./EligibilityController"),
+          p = e("./Month24Controller"),
+          x = e("./Month48Controller"),
+          b = e("./FaaissuedController"),
+          v = e("./SpecialController"),
           l = e("./GuideController"),
           w = e("./WelcomeController");
         r.InfoModule = angular
@@ -15116,6 +15248,10 @@ require = (function e(t, r, i) {
           .controller(n.ContactsController.NAME, n.ContactsController)
           .controller(z.RenewalController.NAME, z.RenewalController)
           .controller(y.EligibilityController.NAME, y.EligibilityController)
+          .controller(p.Month24Controller.NAME, p.Month24Controller)
+          .controller(x.Month48Controller.NAME, x.Month48Controller)
+          .controller(b.FaaissuedController.NAME, b.FaaissuedController)
+          .controller(v.SpecialController.NAME, v.SpecialController)
           .controller(l.GuideController.NAME, l.GuideController)
           .controller(w.WelcomeController.NAME, w.WelcomeController);
       },
@@ -15126,6 +15262,10 @@ require = (function e(t, r, i) {
         "./FAQController": 101,
         "./RenewalController": 1102,
         "./EligibilityController": 1103,
+        "./Month24Controller": 1105,
+        "./Month48Controller": 1106,
+        "./FaaissuedController": 1107,
+        "./SpecialController": 1108,
         "./GuideController": 1104,
         "./WelcomeController": 1101,
       },
@@ -24097,6 +24237,18 @@ require = (function e(t, r, i) {
               (t.prototype.eligibilityUrl = function () {
                 return this.url(t.eligibilityRoute);
               }),
+              (t.prototype.month24Url = function () {
+                return this.url(t.month24Route);
+              }),
+              (t.prototype.month48Url = function () {
+                return this.url(t.month48Route);
+              }),
+              (t.prototype.faaissuedUrl = function () {
+                return this.url(t.faaissuedRoute);
+              }),
+              (t.prototype.specialUrl = function () {
+                return this.url(t.specialRoute);
+              }),
               (t.prototype.guideUrl = function () {
                 return this.url(t.guideRoute);
               }),
@@ -24113,6 +24265,10 @@ require = (function e(t, r, i) {
               (t.welcomeRoute = "/info/welcome"),
               (t.renewalRoute = "/info/renewal"),
               (t.eligibilityRoute = "/info/eligibility"),
+              (t.month24Route = "/info/month24"),
+              (t.month48Route = "/info/month48"),
+              (t.faaissuedRoute = "/info/faaissued"),
+              (t.specialRoute = "/info/special"),
               (t.guideRoute = "/info/guide"),
               (t.contactsRoute = "/info/contacts"),
               (t.$inject = ["$location"]),
@@ -26179,6 +26335,10 @@ require = (function e(t, r, i) {
             (e.WELCOME_MENU_KEY = "welcome"),
             (e.RENEWAL_MENU_KEY = "renewal"),
             (e.ELIGIBILITY_MENU_KEY = "eligibility"),
+            (e.MONTH24_MENU_KEY = "month24"),
+            (e.MONTH48_MENU_KEY = "month48"),
+            (e.FAAISSUED_MENU_KEY = "faaissued"),
+            (e.SPECIAL_MENU_KEY = "special"),
             (e.GUIDE_MENU_KEY = "guide"),
             (e.CONTACTS_MENU_KEY = "contacts"),
             (e.PERSONAL_ACCOUNT_MENU_KEY = "personal_account"),

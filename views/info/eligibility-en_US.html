@@ -585,20 +585,30 @@ $(document).on('click', '#tree li input', function() {
 
 });
 // hide and show the 3 conditions
-    $(document).on("click", "#mental", function() {
-                $('.mental').toggle();
-        });
-    $(document).on("click", "#neurological", function() {
-                $('.neurological').toggle();
-        });
-    $(document).on("click", "#cardio", function() {
-                $('.cardio').toggle();
-        });
-    $(document).on("click", "#mental1", function() {
-                $('.mental1').toggle();
-        });
-    $(document).on("click", "#neurological1", function() {
-                $('.neurological1').toggle();
-        });
+$(document).on("click", "#mental", function(event) {
+  event.preventDefault();
+  $('.mental').toggle();
+});
+
+$(document).on("click", "#neurological", function(event) {
+  event.preventDefault();
+  $('.neurological').toggle();
+});
+
+$(document).on("click", "#cardio", function(event) {
+  event.preventDefault();
+  $('.cardio').toggle();
+});
+
+$(document).on("click", "#mental1", function(event) {
+  event.preventDefault();
+  $('.mental1').toggle();
+});
+
+$(document).on("click", "#neurological1", function(event) {
+  event.preventDefault();
+  $('.neurological1').toggle();
+});
+
 
 </script>
