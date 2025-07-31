@@ -2752,6 +2752,9 @@ require = (function e(t, r, i) {
             .when(q.InfoRouter.faaissuedRoute, {
               templateUrl: s.template("info/faaissued.html"),
             })
+            .when(q.InfoRouter.tookRoute, {
+              templateUrl: s.template("info/took.html"),
+            })
             .when(q.InfoRouter.specialRoute, {
               templateUrl: s.template("info/special.html"),
             })            
@@ -15197,6 +15200,35 @@ require = (function e(t, r, i) {
     "./../utils/PageHeaderHelper": 231,
   },
 ],
+1109: [
+  function (e, t, r) {
+    var i = e("./../utils/MenuHelper"),
+        s = e("./../utils/PageHeaderHelper"),
+        o = e("../utils/UrlService"),
+        n = (function () {
+          function e(e, t) {
+            this.$location = e;
+            this.url = t;
+
+            i.MenuHelper.setCurrentMenuItem(i.MenuHelper.TOOK_MENU_KEY);
+            s.PageHeader.set().header("Took Course First").update();
+          }
+
+          return (
+            e.NAME = "info.TookController",
+            e.$inject = ["$location", o.UrlService.NAME],
+            e
+          );
+        })();
+
+    r.TookController = n;
+  },
+  {
+    "../utils/UrlService": 236,
+    "./../utils/MenuHelper": 227,
+    "./../utils/PageHeaderHelper": 231,
+  },
+],
 1108: [
   function (e, t, r) {
     var i = e("./../utils/MenuHelper"),
@@ -15237,6 +15269,7 @@ require = (function e(t, r, i) {
           p = e("./Month24Controller"),
           x = e("./Month48Controller"),
           b = e("./FaaissuedController"),
+          c = e("./TookController"),
           v = e("./SpecialController"),
           l = e("./GuideController"),
           w = e("./WelcomeController");
@@ -15251,6 +15284,7 @@ require = (function e(t, r, i) {
           .controller(p.Month24Controller.NAME, p.Month24Controller)
           .controller(x.Month48Controller.NAME, x.Month48Controller)
           .controller(b.FaaissuedController.NAME, b.FaaissuedController)
+          .controller(c.TookController.NAME, c.TookController)
           .controller(v.SpecialController.NAME, v.SpecialController)
           .controller(l.GuideController.NAME, l.GuideController)
           .controller(w.WelcomeController.NAME, w.WelcomeController);
@@ -15265,6 +15299,7 @@ require = (function e(t, r, i) {
         "./Month24Controller": 1105,
         "./Month48Controller": 1106,
         "./FaaissuedController": 1107,
+        "./TookController": 1109,
         "./SpecialController": 1108,
         "./GuideController": 1104,
         "./WelcomeController": 1101,
@@ -24246,6 +24281,9 @@ require = (function e(t, r, i) {
               (t.prototype.faaissuedUrl = function () {
                 return this.url(t.faaissuedRoute);
               }),
+               (t.prototype.tookUrl = function () {
+                return this.url(t.tookRoute);
+              }),
               (t.prototype.specialUrl = function () {
                 return this.url(t.specialRoute);
               }),
@@ -24268,6 +24306,7 @@ require = (function e(t, r, i) {
               (t.month24Route = "/info/month24"),
               (t.month48Route = "/info/month48"),
               (t.faaissuedRoute = "/info/faaissued"),
+              (t.tookRoute = "/info/took"),
               (t.specialRoute = "/info/special"),
               (t.guideRoute = "/info/guide"),
               (t.contactsRoute = "/info/contacts"),
@@ -26338,6 +26377,7 @@ require = (function e(t, r, i) {
             (e.MONTH24_MENU_KEY = "month24"),
             (e.MONTH48_MENU_KEY = "month48"),
             (e.FAAISSUED_MENU_KEY = "faaissued"),
+            (e.TOOK_MENU_KEY = "took"),
             (e.SPECIAL_MENU_KEY = "special"),
             (e.GUIDE_MENU_KEY = "guide"),
             (e.CONTACTS_MENU_KEY = "contacts"),

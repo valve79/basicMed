@@ -84,6 +84,39 @@ hr {
 html {
   scroll-behavior: auto;
 }
+
+.tcMed .accordion {
+    list-style-type: none;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.tcMed .accordion li:nth-of-type(2n+1) {
+    font-weight: 800;
+    position: relative;
+    padding-left: 30px;
+}
+.tcMed .accordion li {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-top: 10px solid transparent;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+.tcMed .accordion li:nth-of-type(2n+1):before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: 'Q:';
+}
 </style>
 
 
@@ -132,7 +165,7 @@ html {
 	<hr>
 <ul>
 <li>
-<b>Q:</b>
+::before
 "Who can fly under the BasicMed reforms?"
 </li>
 <li><p>Hundreds of thousands of pilots can potentially fly under BasicMed. Under the reforms, pilots who have held a valid medical certificate any time after July 15, 2006, may not need to take another exam with an FAA Aviation Medical Examiner. AOPA has developed an <a href="https://www.aopa.org/advocacy/pilots/medical/basicmed/basicmed-eligibility-and-renewal-tool"><strong>online tool</strong></a> to help you determine if you may qualify for BasicMed.</p>
@@ -148,7 +181,7 @@ html {
 <p>If your most recent medical certificate has been suspended at any point in time or revoked, if your most recent authorization for special issuance was withdrawn, or your most recent medical application was denied, you will need to obtain a new medical certificate before you can operate under BasicMed. <a href="https://www.aopa.org/advocacy/pilots/medical/basicmed/basicmedcommondisqualifications">Learn more about common disqualifications</a> and how you may be able to fly under BasicMed in the future.</p>
 </li>
 <li>
-<b>Q:</b>
+::before
 "How do I take advantage of BasicMed?"
 </li>
 <li><p>AOPA recommends taking the following steps, in order:</p>
@@ -159,19 +192,19 @@ html {
 <p>Step 5. Ensure that you meet the flight review requirements of <a href="https://www.law.cornell.edu/cfr/text/14/61.56" target="_blank" alt="FAR 61.56">FAR 61.56</a> and any other applicable flight or instrument proficiency requirements, as necessary for you to act as pilot in command.</p>
 <p>NOTE: You will need your previously completed BasicMed exam CMEC for your 24-month course requirement to be reentered upon the new completion of the online course. For privacy reasons, AOPA does not have or maintain a copy of any information that you submitted to the FAA via the post course form.</p></li>
 <li>
-<b>Q:</b>
+::before
 "How do I know if I am eligible to fly under BasicMed?"
 </li>
 <li><p>AOPA has created a BasicMed Eligibility and Renewal tool to help. Answer a few questions and we will guide you to a website page with step-by-step instructions on what you need to do to take advantage of BasicMed for the first time or for your renewal.</p>
-<p><a class="button btn btn-register-link" href="#-eligibility-and-renewal-tool">Check your Eligibility</a></p>
+<p class="button"><a href="#-eligibility-and-renewal-tool">Check your Eligibility</a></p>
 <p style="color: #545854; margin-right: 0px; margin-bottom: 1.6875rem; margin-left: 0px; padding: 0px;"><em style="margin: 0px; padding: 0px;">Disclaimer: The results provided by the questionnaire are for informational purposes only. You are responsible for ensuring your compliance with the BasicMed rules.</em></p></li>
 <li>
-<b>Q:</b>
+::before
 "Is there a guide or printout I can get with more information on BasicMed?"
 </li>
 <li>For more information, please download <a href="https://basicmedicalcourse.aopa.org/pub/bundles/course_61001/downloads/AOPABasicMed_FAQs_BasicMedQuestions.pdf" target="_blank">AOPA BasicMed Course FAQs</a> (PDF 284 KB) and the <a href="https://basicmedicalcourse.aopa.org/pub/bundles/course_61001/downloads/AOPABasicMed_Pilot_and_Physicians_Guide.pdf" target="_blank">AOPA BasicMed Pilot and Physician Guide</a> (PDF, 651 KB) that both open in a new tab.</li>
 <li>
-<b>Q:</b>
+::before
 "What do I have to carry with me in order to exercise the new BasicMed rule?</li>
 <li>
 	<ul>
@@ -184,29 +217,29 @@ html {
 </ul>
 <p>These records must be made available to the FAA upon request, but you are not required to carry them with you when you fly.</p></li>
 <li>
-<b>Q:</b>
+::before
 "Will medical reforms expire?"
 </li>
 <li>No. Neither the federal law nor the new rules contain an expiration date.</li>
 <li>
-<b>Q:</b>
+::before
 "After the 48-months, do I need to get an FAA medical again to keep acting as PIC?"
 </li>
 <li><p>No. When you have gotten to 48-month after your initial CMEC exam and have completed the online course with the required 24-month intervals, you simply start over with a new CMEC exam with your doctor and retake the course.</p>
 <p>There is no requirement to get a FAA medical unless a health change requires a special issuance.</p>
 <p>You can use the <a href="I-eligibilityTool">AOPA BasicMed Eligibility Tool</a> to help confirm your eligibility with each renewal. Remember that ANY new medical events that pertain to certain cardiac, neurological, or mental health conditions will require a new special issuance from the FAA, even if you already have a special issuance for a different condition or event. </p></li>
 <li>
-<b>Q:</b>
+::before
 "Will I still need to get a flight review?"
 </li>
 <li>Yes. The reforms do not affect the rules for flight reviews and recency of experience requirements contained in <a href="https://www.law.cornell.edu/cfr/text/14/61.57">FAR 61.56 and FAR 61.57</a>.</li>
 <li>
-<b>Q:</b>
+::before
 "Will this affect me if I still want to fly as a sport pilot?"
 </li>
 <li>Not at all. You may still fly light-sport aircraft with at least a sport pilot certificate and a valid driver&rsquo;s license, in accordance with the existing Federal Aviation Regulations.</li>
 <li>
-<b>Q:</b>
+::before
 "Where do I send my completed BasicMed CMEC Medical form after my doctor visit?"
 </li>
 <li><p><strong>Save it right with your logbook</strong> (or electronically). Yup, that is it. <strong>You do not send the actual form to the FAA or AOPA.</strong> Keep the completed CMEC form in your logbook with your course completion certificate. That is, it.</p>
@@ -215,35 +248,35 @@ html {
 <p><span style="color:red"><strong>IMPORTANT:</strong></span> If you do not have your most recent CMEC and completion certificate, even between renewals, YOU ARE NOT LEGAL TO FLY under BasicMed. You need them available upon FAA request.</p>
 </li>
 <li>
-<b>Q:</b>
+::before
 "Expired BasicMed Documents: My Comprehensive Medical Examination Checklist (CMEC) and/or online course completion certificate has expired. What do I do now?"
 </li>
 <li><p>First of all, as long as you are not acting as PIC you are fine. Nothing is reported to the FAA.&nbsp; <strong>Get yourself&nbsp; back into compliance with the BasicMed regulation requirements by the completion of a CMEC exam and/or the course. As long as you have a current flight review, you can command the skies as PIC again</strong>. Remember to have a Comprehensive Medical Examination Checklist (CMEC) completed by a state-licensed physicians <strong>every 48-months to the last day of the month</strong> and earning a FAA approved online BasicMed course completion certificate every <strong>24-months to the last day of the month</strong>. AOPA suggests completing both the CMEC exam and your completion of the course in the same month for easier renewals.</p>
 <p>If you are not sure what you need to do to get back in compliance or just want to have a guided checklist, try AOPA's&nbsp;BasicMed Eligibility and Renewal Tool. Answer a few questions and get an online page of the next steps to take.</p>
-<p><a class="button btn btn-register-link" href="#-eligibility-and-renewal-tool">Check your Eligibility</a></p>
+<p class="button"><a href="#-eligibility-and-renewal-tool">Check your Eligibility</a></p>
 <p><em style="color: #545854; margin: 0px; padding: 0px;">Disclaimer: The results provided by this questionnaire are for informational purposes only. You are responsible for ensuring your compliance with the BasicMed rules.</em></p></li>
 <li>
-<b>Q:</b>
+::before
 "Will I be able to get a FAA Class Medical again after flying under BasicMed privileges?"
 </li>
 <li>Yes, you can. Deciding to fly under BasicMed privileges does not in any way stop you from reapplying for a FAA Class Medical in the future. Some pilot choice to fly under BasicMed for a period of time and then return to getting a Class medical so that they can fly larger faster aircraft or because they have decided to change the type of flying they are doing. Having held a BasicMed certificate does not affect your ability to reapply for a FAA Class Medical.</li>
 <li>
-<b>Q:</b>
+::before
 "If I took a recent flight physical for a third-class medical, can I use that to satisfy the doctor&rsquo;s exam requirement?"
 </li>
 <li>No. Section 2307 of FESSA did not allow for an exam associated with an FAA-issued medical certificate to substitute for a comprehensive medical examination. Your physician, must perform a BasicMed specific medical exam and must also complete the <a href="https://www.faa.gov/documentLibrary/media/Form/FAA_Form_8700-2_OMB_EXP_06-2026.pdf" target="_blank">FAA Medical Exam Checklist (CMEC)</a>. This completed form must be kept with your course completion in your logbook.</li>
 <li>
-<b>Q:</b>
+::before
 "Why must I not use the FAA&rsquo;s MedXPress system?"
 </li>
 <li>The FAA&rsquo;s MedXPress system is only for completing an application for an FAA First, Second-, or Third-Class medical certificate. If you are pursuing BasicMed qualifications, you must download and print the FAA&rsquo;s Comprehensive Medical Examination Checklist.</li>
 <li>
-<b>Q:</b>
+::before
 "Where can I find information about my old medical certificate?"
 </li>
 <li>The <a href="https://amsrvs.registry.faa.gov/airmeninquiry/" target="_blank" alt="Find your BasicMed completion dates on the FAA’s Airman Registry">FAA’s Airman Registry</a> allows you to look up your records. You can also contact the AOPA Pilot Information Center by email at&nbsp;<a href="mailto:pilotassist@aopa.org"><strong>pilotassist@aopa.org</strong></a>&nbsp;or call (888) 462-3976 Monday through Friday, 8:30 a.m. to 6:00 p.m., Eastern Time.</li>
 <li>
-<b>Q:</b>
+::before
 "How does the change in the medical certificate dates by the FAA in 2008, with the extension of the length of medical certificate validity for those under 40, affect my eligibility for BasicMed?"
 </li>
 <li><p>To help clarify medical certificate dates based on the 2008 change that extended the validity period of medicals in determining your eligibility for BasicMed:</p>
@@ -256,74 +289,74 @@ html {
 </li>
 <li>You can download the Comprehensive Medical Examination Checklist (CMEC) directly from the&nbsp;<a href="https://www.faa.gov/documentLibrary/media/Form/FAA_Form_8700-2_OMB_EXP_06-2026.pdf" target="_blank">FAA website</a></li>
 <li>
-<b>Q:</b>
+::before
 "How do I educate my doctor about the checklist before asking for him/her to sign it?"
 </li>
 <li><p>We suggest that you share information about BasicMed and the exam steps <strong>before your scheduled CMEC exam</strong>.</p>
 <p>AOPA has developed a&nbsp;<a href="https://basicmedicalcourse.aopa.org/pub/bundles/course_61001/downloads/AOPABasicMed_Pilot_and_Physicians_Guide.pdf" target="_blank"><strong>guide to BasicMed for Pilots and Doctors</strong></a> to help both pilots and doctors understand the regulations and their responsibilities. You can share the PDF or the direct link to the <a href="##-H-DoctorGuide">Physicians Guide To BasicMed</a> here on the AOPA website directly with the doctor <strong>BEFORE your exam</strong>. But remember that you, the pilot, also needs to be ready for the conversation and a good way to do that is to explore <a href="https://aopa.org/advocacy/pilots/medical/basicmed"><strong>AOPA&rsquo;s online BasicMed Resources</strong></a> or contact the AOPA's Pilot Information Center at <a href="tel:8884623976">(888) 462-3976)</a>, Monday through Friday, 8:30 a.m. to 6:00 p.m. EST, or email <a href="mailto:medicalassist@aopa.org?subject=BasicMed Medical Specialists Question">medicalassist@aopa.org</a></p></li>
 <li>
-<b>Q:</b>
+::before
 "Doesn't the checklist mean that this is really just the same as a Third-Class medical exam?"
 </li>
 <li>No. The third-class medical process requires the doctor to note whether a patient&rsquo;s condition is &ldquo;normal&rdquo; or &ldquo;abnormal&rdquo; and explain any abnormal findings. Under BasicMed, the physician is directed to conduct a medical examination and &ldquo;address, as medically appropriate, any medical conditions identified.&rdquo; In addition, the results of the exam are not sent to the FAA. Instead, the pilot keeps the completed checklist with his or her logbook or in an accurate and legible electronic format and provides it to the FAA only if requested.</li>
 <li>
-<b>Q:</b>
+::before
 "I am taking a medication that is not allowed for operations that require a medical certificate. Can I fly and take the medication?"
 </li>
 <li><p>When a pilot visits his or her physician for the BasicMed examination, the pilot information and medical history portion of medical exam checklist completed by the pilot will list any prescription or non-prescription medication that the pilot currently uses, as well as information such as the medication name and dosage. The physician will then address, as medically appropriate, any medications the individual is taking and discuss the medication&rsquo;s potential to interfere with the safe operation of an aircraft or motor vehicle.</p>
 <p>While there is no list of specific medications that are prohibited for pilots flying under BasicMed rules, certain medications are not safe to be used at all while flying and others require a reasonable waiting period after use. Physicians should be mindful of prescription and over-the-counter drugs that may impact the safe operation of a motor vehicle, in this case a private recreational aircraft. This can include, but is not necessarily limited to, the use of sedatives, psychotropic drugs, antihistamines, narcotics or any other medication that can impair cognition if used while the pilot is operating an aircraft.</p>
 <p>Pilots, in discussion with their physician, should consult available aeromedical resources to understand potential flight hazards associated with any medications being taken, such as whether the underlying condition the medication is being taken for makes flight unsafe, or to understand side-effects that may be unnoticeable before flight but could impair the ability of a pilot to make sound decisions. In addition to the BasicMed rules, pilots taking medication must also comply with existing Federal Aviation Regulations, such as the self-grounding requirements of FAR 61.53 and FAR 91.17&rsquo;s prohibition on operations while using any drug that has affects contrary to safety. AOPA&rsquo;s online medical education course will include medication considerations when evaluating your fitness to fly. The final go/no-go decision is made by the pilot.</p></li>
 <li>
-<b>Q:</b>
+::before
 "Is it out of the ordinary for doctors to be asked to sign this kind of a form?"
 </li>
 <li>Doctors are often asked to affirm that a patient is medically fit for a specific job or activity. Many physicians are willing to administer such exams. But the pilot also needs to be ready for the conversation and a good way to do that is to share <a href="#-H physicians-guide-to-basicmed">AOPA&rsquo;s BasicMed resources</a> with the physician <strong>before their schedule appointment</strong> and suggest the doctor contact the AOPA Pilot Information Center by email at <a href="mailto:pilotassist@aopa.org"><strong>pilotassist@aopa.org</strong></a> or call <a href="tel:8884623976">(888) 462-3976)</a> Monday through Friday, 8:30 a.m. to 6:00 p.m., Eastern Time with their specific questions.</li>
 <li>
-<b>Q:</b>
+::before
 "Can I go to any doctor for the general physical exam required every 48 months?"
 </li>
 <li><p>The comprehensive medical exam must be conducted by a state-licensed physician (M.D.), not a nurse practitioner for example. The FAA notes that &ldquo;all States license medical doctors (M.D.s) and doctors of osteopathic medicine (D.O.s) as physicians, although Federal and some State laws may permit the licensure of other persons, such as doctors of dental surgery (D.D.S.) as physicians. While the FAA expects that a specialist physician, (e.g., D.D.S., dentist, podiatrist) who does not also hold an M.D. or D.O. would not have the breadth of training to conduct a medical exam as required in this rule, the FAA will rely on each State-licensed physician to determine whether he or she is qualified to conduct the medical exam. AOPA recommends that you consider consulting with the doctor who has the best knowledge and history of your health so you both can make a proper determination of your medical fitness to fly.</p>
 <p>To demonstrate compliance with the BasicMed rules, keep the completed checklist with your logbook (or in an accurate and legible electronic format). You do not have to provide the checklist to the FAA unless specifically requested to do so.</p></li>
 <li>
-<b>Q:</b>
+::before
 "I had a standard Third-Class medical exam within the past four years &ndash; could it count as the BasicMed exam?"
 </li>
 <li>No. The BasicMed regulations require an exam by a state licensed physician performed in accordance with the new rules, and the completion of the <a href="https://www.aopa.org/-/media/Files/AOPA/Home/Advocacy/pilots/medical/BasicMed-Pilot-and-Physicians-Guide_Final.pdf"><strong>FAA Comprehensive Medical Examination Checklist</strong></a></li>
 <li>
-<b>Q:</b>
+::before
 "Why not use the FAA&rsquo;s MedXPress system?"
 </li>
 <li>The FAA&rsquo;s MedXPress system is only for completing an application for an FAA First, Second, or Third-Class medical certificate. If you are pursuing BasicMed qualifications, you must download, print and complete the <a href="https://www.aopa.org/-/media/Files/AOPA/Home/Advocacy/pilots/medical/BasicMed-Pilot-and-Physicians-Guide_Final.pdf"><strong>FAA Comprehensive Medical Examination Checklist</strong></a></li>
 <li>
-<b>Q:</b>
+::before
 "How does this help me if I'm on special issuance?"
 </li>
 <li>If you held a valid medical certificate under special issuance after July 15, 2006 and <em><strong>your medical status has not changed</strong></em>, you should be able to fly under BasicMed provided you meet all other qualifications, including being under the care and treatment of a physician for the medical condition that resulted in the special issuance. If you develop a new medical condition that, under the rule, requires a special issuance, you will be required to obtain a one-time only special issuance from the FAA before you can use BasicMed. Learn more about <a href="##-J-SpecialIssuance">Special Issuance requirements under BasicMed</a>.</li>
 <li>
-<b>Q:</b>
+::before
 "Should I surrender my current unexpired medical if I get BasicMed?"
 </li>
 <li><p>The rule allows a pilot to hold both a medical certificate and BasicMed qualification, so it isn&rsquo;t necessary to surrender your valid medical certificate.&nbsp; However, even if a pilot chooses to operate under BasicMed rules and is not exercising the privileges of a medical certificate, the <strong>FAA still has the authority to pursue enforcement action</strong> if there is evidence that the pilot does not meet the medical certification standards for the medical certificate under 14 CFR Part 67. <a href="https://www.law.cornell.edu/cfr/text/14/61.53">FAR 61.53</a> applies to operations that require a medical certificate but also apply to operations under BasicMed.&nbsp; A pilot who knows or has reason to know of any condition that would make him/her unsafe for flight must self-ground whether the hold a medical certificate or BasicMed qualification. Before you surrender any airman certificate, consider contacting AOPA&rsquo;s <a href="https://pilot-protection-services.aopa.org/?_ga=2.181595943.1461796270.1564411820-874585983.1562953045"><strong>Pilot Protection Services</strong></a> program or an experienced aviation attorney.</p>
 <p>Remember: If your most recent FAA Medical has been withdrawn, denied, revoked, or suspended for any reason that you are <strong>not legal to fly</strong> under BasicMed. You will be required to regain an FAA Medical before you could fly under BasicMed.</p></li>
 <li>
-<b>Q:</b>
+::before
 "My FAA medical was denied, can't I just go to my doctor and fly under BasicMed?"
 </li>
 <li><p>No, if you have had a denied, withdrawn, revoked, or suspended FAA Medical, you are not eligible to fly under BasicMed. You will be required to regain an FAA Medical before you could fly under BasicMed.</p>
 <p><strong>CRITICAL:</strong> Do not think that by failing to respond to FAA requests for additional information (e.g. during a deferred or pending medical application) that you can just fly under BasicMed. Actions like this can make you disqualified from using BasicMed as it may lead to a denial or suspension.</p></li>
 <li>
-<b>Q:</b>
+::before
 "Will I be able to get insurance if I fly under these new rules?"
 </li>
 <li>AOPA went straight to the source and surveyed insurance carriers. We learned that, nearly across the board, medical reform should have no negative impact on insurance coverage, most carriers told us is that if a pilot is compliant with FAA regulations, the pilot may be in compliance with their company insurance requirements as well. Nevertheless, as each insurance policy may be different, it is best to read and understand your policy and consult with your insurance company with any questions.</li>
 <li>
-<b>Q:</b>
+::before
 "What if I just want to keep getting a Third-Class medical certificate every two or five years?"
 </li>
 <li><p>You can do that. Just keep seeing your aviation medical examiner (AME) for a periodic FAA medical examination at the frequency required by FAR 61.23. If you decide later that you want to use BasicMed, just follow the steps to get qualified. If your medical is still current, no problem as you can hold both a medical certificate and operate under BasicMed at the same time. You just must decide before each flight which privileges you will be operating under. You can&rsquo;t change from BasicMed operations to medical certificate operations mid-flight.</p></li>
 </ul>
 <li>
-<b>Q:</b>
+::before
 "Isn't BasicMed is not just for “old” or retired pilots."</li>
 <li>Any pilot who meets the requirements can fly under BasicMed. It’s a great option for private pilots, CFIs, DPEs, or those who are not purely career pilots, for whom an-FAA issued medical is required. It can be simpler for the pilot, and there is less waiting time.</li>
 <div>
@@ -341,7 +374,7 @@ html {
 <ul>
 <p>Common reasons for someone to not qualify to fly under BasicMed can include but are not limited to the following issues:</p>
 <ol>
-<li>You do not have a current and valid U.S. driver’s license. Canadian or Mexican driver’s licenses do not currently qualify for use under BasicMed Reform.</li>
+<li>You do not have a current and valid U.S. driver's license. Canadian or Mexican driver's licenses do not currently qualify for use under BasicMed Reform.</li>
 <li>You have never held an FAA-issued medical certificate.</li>
 <ul>
 	<li>You are required to have had a medical exam by an Aviation Medical Examiner and have been issued at least one FAA-issued medical certificate before you can be eligible to fly under BasicMed.</li>
@@ -426,8 +459,8 @@ html {
 </li>
 <li><p>The BasicMed regulation does not include an FAA defined list of disallowed medications. It places the responsiblity on the pilot and their doctor to determine if the medications that are being taken would limit a pilot's ablility to be PIC. REMEMBER: Medications can respond differently in your body on the ground than in the air. You need to have an honest conversation with the prescribing medical professional. You can review the FAA's medication lists and see if any medications should be discussed with your doctor.</p>
 <ul>
-	<li>View the <a href"https://www.faa.gov/ame_guide/pharm/dni_dnf" target="_blank" alt="FAA's Guide for Aviation Medical Examiners Pharmaceuticals">FAA’s Guide for Aviation Medical Examiners: Pharmaceuticals (Therapeutic Medications) Do Not Issue – Do Not Fly</a></li>
-	<li>View the <a href="https://www.faa.gov/licenses_certificates/medical_certification/media/OTCMedicationsforPilots.pdf" target="_blank" alt="FAA’s Over-The-Counter Medications guide">FAA&apos;s Over-The-Counter Medications guide</a> (PDF)</li>
+	<li>View the <a href="https://www.faa.gov/ame_guide/pharm/dni_dnf" target="_blank" alt="FAA's Guide for Aviation Medical Examiners Pharmaceuticals">FAA's Guide for Aviation Medical Examiners: Pharmaceuticals (Therapeutic Medications) Do Not Issue – Do Not Fly</a></li>
+	<li>View the <a href="https://www.faa.gov/licenses_certificates/medical_certification/media/OTCMedicationsforPilots.pdf" target="_blank" alt="FAA's Over-The-Counter Medications guide">FAA&apos;s Over-The-Counter Medications guide</a> (PDF)</li>
 </ul>
 </li>
 <li>
@@ -791,7 +824,7 @@ html {
 <h2>Have questions?</h2>
 <p>Call AOPA's Pilot Information Center at <a href="tel:8884623976">(888) 462‑3976</a>, Monday–Friday, 8:30 a.m.–6 p.m. EST, or email <a href="mailto:medicalassist@aopa.org?subject=BasicMed Medical Specialists Question">medicalassist@aopa.org</a>.</p>
 <p>Need more information about BasicMed?<br>
-Visit <a href="https://www.aopa.org/advocacy/pilots/medical/basicmed" target="_blank">AOPA’s BasicMed resources</a>.</p>
+Visit <a href="https://www.aopa.org/advocacy/pilots/medical/basicmed" target="_blank">AOPA's BasicMed resources</a>.</p>
 </section>
 
 
